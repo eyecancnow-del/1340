@@ -1425,7 +1425,12 @@ function setEdit(on){
     sb.onclick=async function(){
       sb.disabled=true; sb.textContent='Saving...';
       document.querySelectorAll('[contenteditable]').forEach(function(el){el.removeAttribute('contenteditable')});
-      saveSectionState(); await ghPushState(); setEdit(false);
+      try {
+        saveSectionState();
+        var ok = await ghPushState();
+        if(!ok){ sb.disabled=false; sb.textContent='\u2B07 Save'; return }
+        setEdit(false);
+      } catch(e){ console.error('Save error:', e); alert('Save failed: '+e.message); sb.disabled=false; sb.textContent='\u2B07 Save' }
     };
     document.body.appendChild(sb);
     if(typeof closeMag==='function'){
@@ -1824,7 +1829,7 @@ function saveSectionState(){
     });
     state[id] = clone.innerHTML;
   });
-  dbSaveState(state).catch(function(){});
+  dbSaveState(state).catch(function(e){ console.error('IndexedDB save failed:', e); });
 }
 function restoreSectionState(state){
   STATE_KEYS.forEach(function(id){
@@ -1874,9 +1879,9 @@ async function ghCommitFile(path, content, msg){
     var sha = await ghGetSha(path);
     var base64 = btoa(unescape(encodeURIComponent(content)));
     var res = await ghApi('/contents/' + path, 'PUT', { message: msg || 'Update ' + path, content: base64, sha: sha || undefined, branch: GH_BRANCH });
-    if(res && (res.ok || res.status===422)) return true;
+    if(res && res.ok) return true;
     if(res && res.status===409){ if(retry<4) await new Promise(function(r){setTimeout(r,1000*Math.pow(2,retry))}) }
-    else break;
+    else { if(res) console.error('GitHub PUT failed:', res.status); break }
   }
   return false;
 }
