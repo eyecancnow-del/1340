@@ -1,0 +1,1574 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="1340 — Savar's Premium Coffee & Mocktail Bar. Handcrafted mocktails, single-origin coffee, and modern Western cuisine in Savar, Dhaka, Bangladesh.">
+<meta property="og:title" content="1340 — Savar's Premium Coffee & Mocktail Bar">
+<meta property="og:description" content="Handcrafted mocktails, single-origin coffee, and modern Western cuisine. Savar's premier destination for bold flavors.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1340savar.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="1340 — Savar's Premium Coffee & Mocktail Bar">
+<meta name="twitter:description" content="Handcrafted mocktails, single-origin coffee, and modern Western cuisine in Savar, Dhaka.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&q=85">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&q=85">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E☕%3C/text%3E%3C/svg%3E">
+<title>1340 — Savar's Premium Coffee & Mocktail Bar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#0A0A0A;--dark:#1A1A1A;--espresso:#1E0A0A;--maroon:#2A0A0A;--red:#8B0000;--bright:#C41E3A;--gold:#D4A574;--copper:#B87333;--latte:#C8A882;--cream:#F5F0EB;--muted:rgba(245,240,235,0.6);--warm-glow:rgba(212,165,116,0.06)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--black);color:var(--cream);overflow-x:hidden}
+
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:0.8rem 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.15);backdrop-filter:blur(0);transition:all 0.5s;border-bottom:1px solid rgba(212,165,116,0.08);}
+nav.scrolled{background:rgba(10,10,10,0.92);backdrop-filter:blur(16px) saturate(1.1);border-bottom:1px solid rgba(212,165,116,0.12);box-shadow:0 4px 30px rgba(0,0,0,0.3);}
+nav .logo{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2vw,1.8rem);color:var(--gold);font-weight:700;letter-spacing:3px;text-decoration:none;position:relative;text-shadow:0 0 40px rgba(212,165,116,0.2);}
+nav .links{list-style:none;display:flex;gap:0.25rem;align-items:center;margin:0;padding:0;}
+nav .links li{margin:0;padding:0;}
+nav .links a{position:relative;padding:0.5rem 1rem;font-size:clamp(0.7rem,0.9vw,0.85rem);font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:rgba(245,230,211,0.75);text-decoration:none;transition:all 0.35s;border-radius:100px;font-family:'Inter',sans-serif;}
+nav .links a::before{content:'';position:absolute;inset:0;border-radius:100px;background:rgba(212,165,116,0.08);transform:scaleX(0.85) scaleY(0.5);opacity:0;transition:all 0.35s cubic-bezier(0.4,0,0.2,1);}
+nav .links a:hover{color:var(--cream);}
+nav .links a:hover::before{transform:scaleX(1) scaleY(1);opacity:1;}
+nav .links a:active{transform:scale(0.96);}
+.hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px;padding:6px;border:1px solid rgba(212,165,116,0.2);border-radius:8px;transition:border-color 0.3s;}
+.hamburger:hover{border-color:rgba(212,165,116,0.5);}
+.hamburger span{width:24px;height:1.5px;background:var(--cream);transition:0.3s;border-radius:2px;}
+.hero{position:relative;height:100vh;height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden}
+.hero video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%);object-fit:cover;z-index:0}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,0.9) 0%,rgba(60,20,20,0.35) 35%,rgba(212,165,116,0.06) 60%,rgba(10,10,10,0.85) 100%);z-index:1}
+.hero-content{position:relative;z-index:2}
+.hero-title{font-size:clamp(4rem,15vw,12rem);color:var(--gold);line-height:0.85;margin-bottom:0.5rem;text-shadow:0 0 80px rgba(212,165,116,0.3),0 2px 4px rgba(0,0,0,0.8);display:flex;gap:clamp(0.2rem,1vw,1rem);justify-content:center}
+.hero-title .letter{display:inline-block;opacity:0}
+.hero-sub{font-size:clamp(0.9rem,1.8vw,1.4rem);font-weight:300;letter-spacing:6px;text-transform:uppercase;color:#fff;margin-bottom:0.75rem;opacity:0;text-shadow:0 2px 8px rgba(0,0,0,0.8)}
+.hero-tagline{font-size:clamp(0.7rem,1.2vw,1rem);color:rgba(255,255,255,0.85);font-weight:300;letter-spacing:3px;opacity:0;text-shadow:0 2px 8px rgba(0,0,0,0.8)}
+.scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0}
+.scroll-indicator span{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+.scroll-arrow{width:20px;height:20px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);animation:bounceArrow 2s infinite}
+@keyframes bounceArrow{0%,100%{transform:rotate(45deg) translate(0,0)}50%{transform:rotate(45deg) translate(6px,6px)}}
+section{position:relative;padding:6rem 5%}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-header h2{font-size:clamp(2rem,4vw,3.5rem);color:var(--gold);margin-bottom:0.75rem;letter-spacing:1px}
+.section-header p{font-size:clamp(0.9rem,1.3vw,1.1rem);color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8}
+.wave-divider{position:relative;width:100%;height:80px;margin-top:-1px;overflow:hidden}
+.wave-divider svg{position:absolute;width:100%;height:100%;top:0;left:0}
+.wave-divider.top{transform:rotate(180deg)}
+.about-grid{display:grid;grid-template-columns:1fr;gap:0;width:100%;padding:clamp(1rem,calc(1vw + 1.5vh),2rem) clamp(1rem,calc(1vw + 1.5vh),2rem)}
+.about-text{text-align:center}
+.about-text h2{font-family:'Zen Old Mincho',serif;font-size:clamp(2rem,calc(3vw + 3vh),5rem);color:var(--gold);margin-bottom:clamp(0.5rem,calc(0.5vw + 0.5vh),1.5rem)}
+.about-text p{font-size:clamp(1rem,calc(1vw + 0.8vh),1.35rem);line-height:clamp(1.6,calc(1.2 + 0.3vw + 0.3vh),2);color:var(--muted);margin-bottom:clamp(0.4rem,calc(0.3vw + 0.3vh),1rem);text-align:center}
+.about-text .jp-char{display:inline-block;min-width:0.6em;text-align:center}
+.about-text .glow-word{transition:text-shadow 1s ease,color 1s ease;text-shadow:0 0 0 transparent}
+.about-text .highlight{color:var(--gold);font-style:italic;font-family:'Zen Old Mincho',serif}
+.about-image{width:100%;height:clamp(120px,calc(10vw + 10vh),250px);object-fit:cover;border-radius:8px}
+.menu-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;max-width:420px;margin:0 auto}
+.menu-card{background:var(--dark);border:1px solid rgba(212,165,116,0.12);border-radius:12px;padding:2.5rem 2rem;text-align:center;cursor:pointer;min-height:clamp(400px,60vw,600px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;box-shadow:0 4px 30px rgba(0,0,0,0.3);transition:transform 0.3s ease,box-shadow 0.3s ease}
+.menu-card:hover{transform:scale(1.02);box-shadow:0 8px 50px rgba(0,0,0,0.4)}
+.menu-card .icon{font-size:clamp(1.2rem,2vw,1.8rem);margin-bottom:0.5rem;width:48px;height:48px;margin:0 auto 0.5rem;border-radius:8px;background:rgba(212,165,116,0.03);border:1px dashed rgba(212,165,116,0.08)}
+.menu-card .icon{cursor:pointer}
+.menu-card .icon.has-img{position:absolute;inset:0;width:100%!important;height:100%!important;border-radius:12px;margin:0;border:0;z-index:0;background-size:contain;background-position:center;background-repeat:no-repeat}
+.menu-card:has(.icon.has-img) h3{display:none}
+.menu-card h3{font-size:clamp(1.1rem,1.5vw,1.4rem);color:var(--gold);margin-bottom:1rem;position:relative;z-index:2}
+.menu-card ul{list-style:none;text-align:left;position:relative;z-index:2}
+.menu-card ul li{padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;font-size:clamp(0.8rem,1vw,0.9rem);color:var(--cream)}
+.menu-card ul li:last-child{border:none}
+.menu-card ul li span{color:var(--gold);font-weight:500}
+.monin-section{text-align:center;padding:5rem 5%;background:linear-gradient(180deg,rgba(10,10,10,0.95),rgba(30,10,10,0.3),rgba(10,10,10,0.95))}
+.monin-section h2{font-size:clamp(1.5rem,3vw,2.5rem);color:var(--gold);margin-bottom:1rem}
+.monin-section p{color:var(--muted);max-width:650px;margin:0 auto 3rem;line-height:1.8}
+.monin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:1.2rem;max-width:1000px;margin:0 auto}
+.monin-grid .menu-card.flip-card .menu-card-inner{min-height:380px}
+.monin-grid .menu-card.flip-card .menu-card-front,.monin-grid .menu-card.flip-card .menu-card-back{padding:2rem 1.5rem}
+.monin-grid .menu-card.flip-card .menu-card-front .icon{width:90px;height:90px}
+.monin-grid .menu-card.flip-card .menu-card-back .icon{width:44px;height:44px}
+.monin-grid .menu-card.flip-card .menu-card-back .icon.has-img{width:44px;height:44px}
+.monin-grid .menu-card.flip-card .menu-card-back h3{font-size:1.05rem;margin-bottom:0.4rem}
+.monin-grid .menu-card.flip-card .menu-card-back p{font-size:0.8rem;margin-bottom:0.5rem}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1100px;margin:0 auto}
+.gallery-grid img{width:100%;height:280px;object-fit:cover;border-radius:6px;transition:transform 0.4s,filter 0.4s}
+.gallery-grid img:hover{transform:scale(1.03);filter:brightness(1.1)}
+.location-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto;align-items:center}
+.location-info h2{font-size:clamp(1.5rem,3vw,2.5rem);color:var(--gold);margin-bottom:1.5rem}
+.location-info p{color:var(--muted);line-height:1.8;margin-bottom:0.5rem;font-size:clamp(0.85rem,1.1vw,1rem)}
+.location-info .label{color:var(--gold);font-weight:500}
+.map-wrap{border-radius:12px;overflow:hidden}
+.map-wrap iframe{width:100%;height:350px;border:0;filter:grayscale(1) invert(0.9)}
+.contact-section{text-align:center;padding:5rem 5%}
+.contact-section h2{font-size:clamp(2rem,4vw,3rem);color:var(--gold);margin-bottom:2rem}
+.contact-btn{display:flex;align-items:center;gap:0.75rem;padding:1rem 2.5rem;border:1px solid var(--copper);border-radius:50px;color:var(--cream);text-decoration:none;font-size:0.95rem;transition:all 0.3s}
+.contact-btn:hover{background:var(--copper);color:var(--cream);transform:translateY(-3px);border-color:var(--gold)}
+.menu-fullscreen{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;cursor:zoom-out;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+.menu-fullscreen.open{display:flex}
+.menu-fullscreen img{max-width:95vw;max-height:95vh;object-fit:contain;border-radius:4px}
+footer{padding:3rem 5%;text-align:center;border-top:1px solid rgba(212,165,116,0.1);background:linear-gradient(0deg,rgba(30,10,10,0.95) 0%,rgba(30,10,10,0.3) 100%)}
+footer p{color:var(--muted);font-size:0.85rem;letter-spacing:1px}
+footer .heart{color:var(--gold)}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  nav .links{display:none;position:absolute;top:100%;left:0;width:100%;background:rgba(10,10,10,0.98);backdrop-filter:blur(20px);flex-direction:column;padding:1.5rem 1.5rem 2rem;gap:0.5rem;text-align:center;border-bottom:1px solid rgba(212,165,116,0.1);}
+  nav .links.open{display:flex}
+  nav .links a{padding:0.75rem 1rem;font-size:0.8rem;border-radius:8px;text-transform:uppercase;letter-spacing:2px;}
+  nav .links a::before{display:none;}
+  nav .links a:hover{background:rgba(212,165,116,0.08);color:var(--gold);}
+  .about-grid,.location-wrap{grid-template-columns:1fr}
+  .about-image{height:300px}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid img{height:200px}
+  .menu-grid{max-width:100%}
+  .contact-links{flex-direction:column;align-items:center}
+  section{padding:4rem 5%}
+}
+@media(max-width:480px){
+  .gallery-grid{grid-template-columns:1fr}
+
+  .monin-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* HOVER VIDEO REVEAL */
+.hover-video-wrap{position:absolute;inset:0;z-index:3;opacity:0;pointer-events:none;overflow:hidden}
+.hover-video-wrap video{width:100%;height:100%;object-fit:cover}
+
+/* STATS */
+/* WAVE ANIMATION */
+.wave-divider svg{will-change:transform}
+.wave-divider svg:first-child{animation:waveDrift1 8s ease-in-out infinite}
+.wave-divider svg:last-child{animation:waveDrift2 12s ease-in-out infinite}
+@keyframes waveDrift1{0%,100%{transform:translateX(0) scaleX(1)}50%{transform:translateX(-20px) scaleX(1.015)}}
+@keyframes waveDrift2{0%,100%{transform:translateX(0)}33%{transform:translateX(12px)}66%{transform:translateX(-8px)}}
+
+/* CARD MAGNIFY OVERLAY */
+.card-modal-overlay {
+  position:fixed;inset:0;z-index:99998;
+  background:rgba(0,0,0,0.75);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  opacity:0;pointer-events:none;
+  transition:opacity 0.4s ease;
+}
+.card-modal-overlay.active{opacity:1;pointer-events:auto}
+.magnified{cursor:zoom-out!important}
+
+/* RACING LED DOT + COMET TAIL — only when flipped + magnified */
+.coffee-card.flipped.magnified::before,
+.menu-card.flip-card.flipped.magnified::before {
+  content:'';
+  position:absolute;
+  width:50px;height:50px;
+  background:radial-gradient(circle,rgba(212,165,116,0.7) 0%,rgba(200,120,48,0.2) 30%,transparent 70%);
+  border-radius:50%;
+  filter:blur(12px);
+  opacity:0.5;
+  box-shadow:0 0 80px #d48840,0 0 160px rgba(200,120,48,0.3),0 0 300px rgba(212,165,116,0.1);
+  offset-path:inset(3px round 9px);
+  offset-rotate:0deg;
+  animation:raceAround var(--led-dur,3.45s) linear infinite;
+  animation-delay:var(--led-trail,-0.6s);
+  pointer-events:none;
+  z-index:3;
+}
+.coffee-card.flipped.magnified::after,
+.menu-card.flip-card.flipped.magnified::after {
+  content:'';
+  position:absolute;
+  width:5px;height:5px;
+  background:#fff5e6;
+  border-radius:50%;
+  box-shadow:0 0 8px #fff5e6,0 0 24px var(--gold),0 0 60px rgba(212,165,116,0.6);
+  offset-path:inset(3px round 9px);
+  offset-rotate:0deg;
+  animation:raceAround var(--led-dur,3.45s) linear infinite;
+  pointer-events:none;
+  z-index:4;
+}
+@keyframes raceAround{0%{offset-distance:0%}100%{offset-distance:100%}}
+
+/* TYPING CURSOR */
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.typing-cursor{display:inline-block;width:2px;height:1.2em;background:var(--gold);margin-left:2px;vertical-align:text-bottom;animation:blink 0.7s step-end infinite}
+
+/* PARALLAX */
+.parallax-bg{position:absolute;inset:0;z-index:0;pointer-events:none;will-change:transform}
+
+/* SCROLL PROGRESS BAR */
+.scroll-bar{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--espresso),var(--copper),var(--gold));z-index:10000;transition:width 0.1s linear}
+
+/* CURSOR FOLLOWER */
+
+
+/* REVEAL CLASSES */
+.reveal-left{opacity:0;transform:translateX(-60px)}
+.reveal-right{opacity:0;transform:translateX(60px)}
+.reveal-up{opacity:0;transform:translateY(50px)}
+.reveal-scale{opacity:0;transform:scale(0.92)}
+.reveal-rotate{opacity:0;transform:rotateX(15deg) translateY(30px)}
+
+/* MENU FLIP */
+.menu-card.flip-card{perspective:1000px;cursor:pointer;background:transparent;border:none;padding:0;border-radius:12px;min-height:460px;position:relative}
+.menu-card.flip-card .menu-card-inner{position:relative;width:100%;min-height:460px;transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);transform-style:preserve-3d;border-radius:12px}
+.menu-card.flip-card.flipped .menu-card-inner{transform:rotateY(180deg)}
+.menu-card.flip-card .menu-card-front,.menu-card.flip-card .menu-card-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;padding:3rem 2rem;display:flex;flex-direction:column;justify-content:center}
+.menu-card.flip-card .menu-card-front{background:var(--dark);border:1px solid rgba(212,165,116,0.15);text-align:center}
+.menu-card.flip-card .menu-card-front .icon{width:100px;height:100px;font-size:0;margin:0 auto;border-radius:12px;background:rgba(212,165,116,0.03);border:1px dashed rgba(212,165,116,0.08);opacity:0.85;filter:drop-shadow(0 4px 20px rgba(212,165,116,0.15));transition:opacity 0.3s,transform 0.3s,background 0.3s,border-color 0.3s}
+.menu-card.flip-card:hover .menu-card-front .icon{opacity:1;transform:scale(1.08)}
+.menu-card.flip-card .menu-card-front .flip-hint-banner{position:absolute;bottom:1.2rem;color:var(--muted);font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;opacity:0.35;transition:opacity 0.3s}
+.menu-card.flip-card:hover .menu-card-front .flip-hint-banner{opacity:0.7}
+.menu-card.flip-card .menu-card-back{background:linear-gradient(135deg,var(--espresso),var(--dark));border:1px solid rgba(212,165,116,0.15);transform:rotateY(180deg);text-align:center;align-items:center;gap:0.2rem}
+.menu-card.flip-card .menu-card-back .icon{width:48px;height:48px;font-size:0;margin:0 auto 0.25rem;border-radius:8px;background:rgba(212,165,116,0.03);border:1px dashed rgba(212,165,116,0.08)}
+.menu-card.flip-card .menu-card-back .icon.has-img{width:48px;height:48px;border:none}
+.menu-card.flip-card .menu-card-back h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold);margin-bottom:0.1rem}
+.menu-card.flip-card .menu-card-back .price{color:var(--copper);font-weight:700;font-size:1.1rem;margin-bottom:0.6rem}
+.menu-card.flip-card .menu-card-back h4{color:var(--gold);font-family:'Inter',sans-serif;font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:0.75rem}
+.menu-card.flip-card .menu-card-back p{color:var(--muted);font-size:0.85rem;line-height:1.7;margin-bottom:0.75rem;text-align:left;width:100%}
+.menu-card.flip-card .menu-card-back .ingredient{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;justify-content:center}
+.menu-card.flip-card .menu-card-back .ingredient span{background:rgba(212,165,116,0.12);color:var(--cream);padding:0.3rem 0.85rem;border-radius:20px;font-size:0.8rem;border:1px solid rgba(212,165,116,0.15)}
+.menu-card.flip-card .menu-card-back .flip-hint{color:var(--gold);font-size:0.7rem;margin-top:0.5rem;letter-spacing:1px;opacity:0.6}
+
+/* HOVER FLIP — desktop only */
+@media (hover: hover) {
+  .menu-card.flip-card:hover .menu-card-inner,
+  .coffee-card:hover .coffee-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* REVIEWS */
+.reviews-section{background:linear-gradient(180deg,rgba(10,10,10,0.95),rgba(30,10,10,0.3),rgba(10,10,10,0.95))}
+.reviews-container{max-width:750px;margin:0 auto;position:relative;overflow:hidden;min-height:280px}
+.review-slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;transition:opacity 0.6s ease,transform 0.6s ease;padding:2rem}
+.review-slide.active{opacity:1;position:relative}
+.review-stars{color:var(--gold);font-size:1.1rem;margin-bottom:1.5rem;letter-spacing:4px}
+.review-text{font-size:clamp(1rem,1.6vw,1.25rem);line-height:1.9;color:var(--cream);font-style:italic;max-width:600px;margin-bottom:1.5rem}
+.review-author{color:var(--gold);font-size:0.85rem;font-weight:500;letter-spacing:1px}
+.review-role{color:var(--muted);font-size:0.75rem;margin-top:0.25rem}
+.review-dots{display:flex;justify-content:center;gap:10px;margin-top:2rem}
+.review-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:all 0.3s;border:none}
+.review-dot.active{background:var(--gold);width:28px;border-radius:5px}
+
+/* FOOTER UPGRADE */
+footer{padding:4rem 5% 2rem;text-align:center;border-top:1px solid rgba(212,165,116,0.1)}
+.footer-brand{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4rem);color:var(--gold);font-weight:700;letter-spacing:4px;margin-bottom:0.5rem;display:block}
+.footer-tagline{color:var(--muted);font-size:0.85rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:2rem}
+.footer-divider{width:40px;height:1.5px;background:var(--gold);margin:0 auto 2rem;border-radius:2px}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;transition:color 0.3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-social{display:flex;justify-content:center;gap:1.5rem;margin-bottom:2rem}
+.footer-social a{color:var(--muted);display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(245,240,235,0.12);transition:all 0.3s}
+.footer-social a:hover{color:var(--gold);border-color:var(--gold);background:rgba(212,165,116,0.08);transform:translateY(-3px)}
+.footer-copy{color:rgba(245,240,235,0.3);font-size:0.75rem;letter-spacing:1px;margin-top:2rem}
+.footer-meta{color:rgba(245,240,235,0.2);font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;margin-top:0.4rem}
+/* COFFEE FLIP CARDS */
+.coffee-section{background:linear-gradient(180deg,rgba(10,10,10,0.95) 0%,rgba(26,18,8,0.3) 50%,rgba(10,10,10,0.95) 100%)}
+.coffee-section .section-header h2{color:var(--gold)}
+.coffee-section .section-header p{color:var(--muted)}
+.coffee-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+.coffee-card{position:relative;perspective:1000px;cursor:pointer;background:transparent;border:none;padding:0;border-radius:12px;min-height:340px;overflow:hidden}
+.coffee-card .coffee-card-inner{position:relative;width:100%;min-height:340px;transition:transform 0.8s cubic-bezier(0.4,0,0.2,1);transform-style:preserve-3d;border-radius:12px}
+.coffee-card.flipped .coffee-card-inner{transform:rotateY(180deg)}
+.coffee-card .coffee-front,.coffee-card .coffee-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;padding:2.5rem 2rem;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.coffee-card .coffee-front{background:linear-gradient(135deg,#1A1208,#2A1A0A);border:1px solid rgba(212,165,116,0.2);text-align:center}
+.coffee-card .coffee-front .icon{width:100px;height:100px;font-size:0;margin:0 auto;border-radius:12px;background:rgba(212,165,116,0.03);border:1px dashed rgba(212,165,116,0.08);opacity:0.85;filter:drop-shadow(0 4px 20px rgba(212,165,116,0.15));transition:opacity 0.3s,transform 0.3s,background 0.3s,border-color 0.3s}
+.coffee-card:hover .coffee-front .icon{opacity:1;transform:scale(1.08)}
+.coffee-card .coffee-front .flip-hint-banner{position:absolute;bottom:1.2rem;color:var(--muted);font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;opacity:0.35;transition:opacity 0.3s}
+.coffee-card:hover .coffee-front .flip-hint-banner{opacity:0.7}
+.coffee-card .coffee-back{background:linear-gradient(135deg,#2A1A0A,#1A1208);border:1px solid rgba(212,165,116,0.2);transform:rotateY(180deg);text-align:center;align-items:center;gap:0.2rem}
+.coffee-card .coffee-back .icon{width:48px;height:48px;font-size:0;margin:0 auto 0.25rem;border-radius:8px;background:rgba(212,165,116,0.03);border:1px dashed rgba(212,165,116,0.08)}
+.coffee-card .coffee-back .icon.has-img{width:48px;height:48px;border:none}
+.coffee-card .coffee-back h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold);margin-bottom:0.1rem}
+.coffee-card .coffee-back .price{color:var(--copper);font-weight:700;font-size:1.1rem;margin-bottom:0.6rem}
+.coffee-card .coffee-back h4{color:var(--gold);font-family:'Inter',sans-serif;font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:1rem}
+.coffee-card .coffee-back p{color:var(--muted);font-size:0.85rem;line-height:1.7;margin-bottom:0.75rem;text-align:left;width:100%}
+.coffee-card .coffee-back .coffee-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.3rem;justify-content:center}
+.coffee-card .coffee-back .coffee-tags span{background:rgba(212,165,116,0.1);color:var(--cream);padding:0.25rem 0.75rem;border-radius:20px;font-size:0.75rem;border:1px solid rgba(212,165,116,0.15)}
+.coffee-card .coffee-back .flip-back{color:var(--gold);font-size:0.7rem;margin-top:0.5rem;letter-spacing:1px;opacity:0.6}
+
+.cards-col{overflow:visible}
+#signatures .cards-col{padding-left:clamp(0px,6vw,96px)}
+.cards-col .cards-subgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:1.2rem}
+.cards-col .coffee-card{min-height:340px}
+.cards-col .coffee-card .coffee-card-inner{min-height:340px}
+.cards-col .menu-card.flip-card{min-height:440px}
+.cards-col .menu-card.flip-card .menu-card-inner{min-height:440px}
+.cards-col .coffee-card .coffee-front,.cards-col .coffee-card .coffee-back,.cards-col .menu-card.flip-card .menu-card-front,.cards-col .menu-card.flip-card .menu-card-back{padding:1.8rem 1.2rem}
+.cards-col .coffee-card .coffee-front .icon,.cards-col .menu-card.flip-card .menu-card-front .icon{width:80px;height:80px;font-size:0;margin:0 auto;border-radius:10px;background:rgba(212,165,116,0.03);border:1px dashed rgba(212,165,116,0.08)}
+.cards-col .coffee-card .coffee-back .icon,.cards-col .menu-card.flip-card .menu-card-back .icon{width:40px;height:40px;font-size:0;margin:0 auto 0.2rem;border-radius:6px;background:rgba(212,165,116,0.03);border:1px dashed rgba(212,165,116,0.08)}
+.cards-col .coffee-card .coffee-back .icon.has-img,.cards-col .menu-card.flip-card .menu-card-back .icon.has-img{width:40px;height:40px;border:none}
+.cards-col .coffee-card .coffee-back h3,.cards-col .menu-card.flip-card .menu-card-back h3{font-size:1.05rem}
+.cards-col .coffee-card .coffee-back .price,.cards-col .menu-card.flip-card .menu-card-back .price{font-size:0.95rem}
+@media(max-width:768px){.cards-col .cards-subgrid{grid-template-columns:1fr}.cards-col .menu-card.flip-card{min-height:500px}.cards-col .menu-card.flip-card .menu-card-inner{min-height:500px}}
+/* GOLDEN HOUR PARALLAX */
+.golden-hour{position:relative;height:100vh;height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;background:linear-gradient(180deg,rgba(10,10,10,0.95) 0%,rgba(26,14,6,0.4) 20%,rgba(45,26,10,0.3) 40%,rgba(74,42,16,0.3) 55%,rgba(107,58,24,0.3) 70%,rgba(139,74,32,0.3) 85%,rgba(160,96,48,0.3) 100%)}
+.golden-hour .gh-content{position:relative;z-index:2}
+.golden-hour .gh-label{font-size:clamp(0.7rem,1vw,0.9rem);letter-spacing:6px;text-transform:uppercase;color:rgba(212,165,116,0.5);margin-bottom:1rem}
+.golden-hour h2{font-size:clamp(2.5rem,7vw,6rem);color:#F5E6C8;line-height:1;margin-bottom:1rem;text-shadow:0 0 60px rgba(212,165,116,0.3),0 2px 4px rgba(0,0,0,0.5)}
+.golden-hour .gh-sub{font-size:clamp(0.85rem,1.3vw,1.1rem);color:rgba(245,230,200,0.7);max-width:500px;margin:0 auto 2rem;line-height:1.8;font-weight:300}
+.golden-hour .gh-clock{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,7rem);color:#F5E6C8;font-weight:700;text-shadow:0 0 40px rgba(212,165,116,0.2)}
+.golden-hour .gh-clock span{display:inline-block;min-width:0.6em}
+.golden-hour .gh-ampm{font-size:clamp(1rem,2vw,1.8rem);color:rgba(212,165,116,0.5);vertical-align:super;margin-left:0.3rem}
+.golden-hour .gh-status{font-family:'Inter',sans-serif;font-size:clamp(0.8rem,1.2vw,1rem);font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:0.5rem;padding:0.4rem 1.2rem;border-radius:100px;display:inline-block;transition:all .3s}
+.golden-hour .gh-status.open{color:#4ade80;border:1px solid rgba(74,222,128,0.3);background:rgba(74,222,128,0.08);box-shadow:0 0 20px rgba(74,222,128,0.15)}
+.golden-hour .gh-status.closed{color:#f87171;border:1px solid rgba(248,113,113,0.2);background:rgba(248,113,113,0.05)}
+.golden-hour .gh-particles{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.gh-particle{position:absolute;width:3px;height:3px;background:#F5E6C8;border-radius:50%;opacity:0;animation:gpDrift linear infinite;box-shadow:0 0 6px rgba(212,165,116,0.4)}
+@keyframes gpDrift{0%{opacity:0;transform:translateY(0) translateX(0)}10%{opacity:0.6}90%{opacity:0.3}100%{opacity:0;transform:translateY(-100vh) translateX(30px)}}
+
+/* ===== SUN & MOON ===== */
+.ambient-sun,.moon{position:fixed;border-radius:50%;z-index:-1;pointer-events:none;will-change:transform,left,top,opacity,filter}
+.ambient-sun{width:min(100vw,900px);aspect-ratio:1;background:url('images/sun.png') 50% 50%/cover no-repeat;border-radius:50%;-webkit-mask:radial-gradient(circle,#000 80%,transparent 100%);mask:radial-gradient(circle,#000 80%,transparent 100%);box-shadow:0 0 140px 70px rgba(255,180,80,0.54),0 0 340px 170px rgba(255,150,50,0.30),0 0 680px 340px rgba(255,130,40,0.14)}
+
+.moon{width:min(35vw,300px);aspect-ratio:1;background:url('images/moon.png') 50% 50%/cover no-repeat;border-radius:50%;-webkit-mask:radial-gradient(circle,#000 80%,transparent 100%);mask:radial-gradient(circle,#000 80%,transparent 100%);opacity:0;will-change:transform,opacity;box-shadow:0 0 30px 12px rgba(200,210,230,0.08)}
+
+
+/* ===== SECTION BACKGROUNDS ===== */
+#about,#signatures,#location{background:linear-gradient(180deg,rgba(10,10,10,0.95),rgba(21,16,10,0.3),rgba(10,10,10,0.95))}
+#menu,#gallery,.contact-section{background:linear-gradient(180deg,rgba(10,10,10,0.95),rgba(30,10,10,0.3),rgba(10,10,10,0.95))}
+
+/* ===== PRELOADER ===== */
+#preloader {
+  position: fixed; inset: 0; z-index: 10000;
+  background: #0a0a0a;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  color: #C41E3A;
+}
+#preloader .pl-logo {
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+#preloader .pl-logo span {
+  display: inline-block;
+  opacity: 0;
+}
+#preloader .pl-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  color: #D4A574;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  opacity: 0;
+}
+#preloader .pl-bar {
+  width: 60px; height: 2px;
+  background: #C41E3A;
+  margin-top: 1.5rem;
+  scale: 0 1;
+}
+/* ADMIN TOOLBAR */
+#admin-bar{position:fixed;bottom:24px;right:24px;z-index:99999;display:flex;align-items:center;gap:6px;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border:1px solid rgba(212,165,116,.2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 32px rgba(0,0,0,.6);animation:adminPulse 4s ease-in-out 3}
+@keyframes adminPulse{0%,100%{border-color:rgba(212,165,116,.2)}50%{border-color:rgba(212,165,116,.6);box-shadow:0 0 24px rgba(212,165,116,0.25)}}
+#admin-bar button{background:var(--gold);border:none;color:var(--black);padding:6px 12px;border-radius:8px;font-size:.78rem;font-weight:600;cursor:pointer;font-family:Inter,sans-serif;transition:transform .2s}
+#admin-bar button:hover{transform:scale(1.05)}
+
+#ab-dl{background:var(--copper)!important;color:var(--cream)!important}
+body.edit-mode h2,body.edit-mode h3,body.edit-mode h4,body.edit-mode p,body.edit-mode li,body.edit-mode .price,body.edit-mode .icon,body.edit-mode .contact-btn,body.edit-mode .footer-tagline,body.edit-mode .review-text,body.edit-mode .review-author,body.edit-mode .review-role,body.edit-mode .footer-links a,body.edit-mode .hero-sub,body.edit-mode .hero-tagline,body.edit-mode .label{outline:1px dashed rgba(212,165,116,.2);cursor:pointer;padding:1px 3px;border-radius:3px;transition:outline-color .2s}
+body.edit-mode h2:hover,body.edit-mode h3:hover,body.edit-mode h4:hover,body.edit-mode p:hover,body.edit-mode li:hover,body.edit-mode .price:hover,body.edit-mode .icon:hover,body.edit-mode .contact-btn:hover,body.edit-mode .footer-tagline:hover,body.edit-mode .review-text:hover,body.edit-mode .review-author:hover,body.edit-mode .review-role:hover,body.edit-mode .footer-links a:hover,body.edit-mode .hero-sub:hover,body.edit-mode .hero-tagline:hover,body.edit-mode .label:hover{outline-color:var(--gold)}
+body.edit-mode .gallery-grid img,body.edit-mode .about-image,body.edit-mode .icon{cursor:pointer}
+.icon.has-img{font-size:0;width:60px;height:60px;margin:0 auto 0.8rem;border-radius:8px;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
+.cards-col .icon.has-img{width:48px;height:48px}
+.coffee-card .coffee-front .icon.has-img{position:absolute;inset:0;width:100%!important;height:100%!important;border-radius:12px;margin:0;border:0;z-index:0}
+.coffee-card .coffee-front:has(.icon.has-img){background:#0a0a0a;border-color:transparent}
+.coffee-card .coffee-front .icon.has-img~.flip-hint-banner{z-index:2;opacity:.9;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.menu-card.flip-card .menu-card-front .icon.has-img{position:absolute;inset:0;width:100%!important;height:100%!important;border-radius:12px;margin:0;border:0;z-index:0}
+.menu-card.flip-card .menu-card-front:has(.icon.has-img){background:#0a0a0a;border-color:transparent}
+.menu-card.flip-card .menu-card-front .icon.has-img~.flip-hint-banner{z-index:2;opacity:.9;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+body.edit-mode .coffee-card .coffee-front .icon,body.edit-mode .menu-card.flip-card .menu-card-front .icon{cursor:default;outline:none}
+body.edit-mode .menu-card:not(.flip-card) .icon{cursor:pointer}
+body.edit-mode [contenteditable]:focus{outline:2px solid var(--gold)!important;border-radius:4px;background:rgba(212,165,116,.06)}
+body.edit-mode .gallery-grid img,body.edit-mode .about-image{cursor:pointer;outline:2px dashed transparent;transition:outline .2s,filter .2s;border-radius:4px}
+body.edit-mode .gallery-grid img:hover,body.edit-mode .about-image:hover{outline-color:var(--gold);outline-offset:3px;filter:brightness(.7)}
+.admin-add-btn{display:none;align-items:center;justify-content:center;min-height:80px;border:2px dashed rgba(212,165,116,.2);border-radius:12px;cursor:pointer;color:var(--gold);font-size:2rem;transition:all .3s;flex:1;height:100%;align-self:stretch;min-height:clamp(200px,60vw,400px)}
+.admin-add-btn:hover{border-color:var(--gold);background:rgba(212,165,116,.06)}
+body.edit-mode .admin-add-btn{display:flex}
+.admin-del-btn{display:none;position:absolute;top:6px;right:6px;z-index:20;width:22px;height:22px;border-radius:50%;border:none;background:rgba(196,30,58,.25);color:var(--bright);cursor:pointer;font-size:.65rem;line-height:22px;text-align:center;transition:all .3s;padding:0}
+.admin-del-btn:hover{background:var(--bright);color:#fff}
+body.edit-mode .admin-del-btn{display:block}
+.tag-del-btn{display:none;vertical-align:middle;width:14px;height:14px;border:none;border-radius:50%;background:rgba(196,30,58,.3);color:var(--bright);cursor:pointer;font-size:.45rem;line-height:14px;text-align:center;padding:0;margin-left:4px}
+body.edit-mode .tag-del-btn{display:inline-flex;align-items:center;justify-content:center}
+.tag-add-btn{display:none;vertical-align:middle;width:20px;height:20px;border:1px dashed rgba(212,165,116,.3);border-radius:50%;background:transparent;color:var(--gold);cursor:pointer;font-size:.8rem;line-height:20px;text-align:center;padding:0;margin-left:6px;transition:all .3s}
+.tag-add-btn:hover{border-color:var(--gold);background:rgba(212,165,116,.1)}
+body.edit-mode .tag-add-btn{display:inline-flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+
+<div class="ambient-sun"></div>
+<div class="moon"></div>
+<svg style="position:absolute;width:0;height:0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <filter id="sun-granulation" x="0%" y="0%" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="4" seed="42" result="noise"/>
+    <feColorMatrix type="matrix" values="
+      1.2 0 0 0 -0.06
+      0 1.1 0 0 -0.03
+      0 0.8 0 0 0
+      0 0 0 0.35 0
+    " in="noise"/>
+  </filter>
+</svg>
+<div class="scroll-bar"></div>
+<div id="preloader">
+  <div class="pl-logo">
+    <span>1</span><span>3</span><span>4</span><span>0</span>
+  </div>
+  <div class="pl-tagline">Coffee · Mocktails · Cuisine</div>
+  <div class="pl-bar"></div>
+</div>
+
+
+
+<nav>
+  <a href="#hero" class="logo">1340</a>
+  <div class="hamburger" onclick="var l=document.querySelector('nav .links');l.classList.toggle('open');this.setAttribute('aria-expanded',l.classList.contains('open'))" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#monin">Flavors</a></li>
+    <li><a href="#signatures">Signatures</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#coffee">Coffee</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="hero">
+  <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1200">
+    <source src="https://videos.pexels.com/video-files/29919850/128230936ea86373939afc9c29f519e3/29919850-hd_1920_1080_25fps.mp4" type="video/mp4">
+    <source src="https://videos.pexels.com/video-files/854635/854635-hd_1920_1080_30fps.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <div class="hover-video-wrap" id="heroHoverVideo">
+    <video muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/29919850/128230936ea86373939afc9c29f519e3/29919850-hd_1920_1080_25fps.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/854635/854635-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-content">
+    <div class="hero-title">
+      <span class="letter">1</span>
+      <span class="letter">3</span>
+      <span class="letter">4</span>
+      <span class="letter">0</span>
+    </div>
+    <p class="hero-sub">Coffee • Mocktails • Cuisine</p>
+    <p class="hero-tagline">Savar, Dhaka, Bangladesh</p>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1350,20 1440,40 L1440,80 L0,80 Z" fill="rgba(10,10,10,0.7)"/>
+  </svg>
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1350,60 1440,40 L1440,80 L0,80 Z" fill="rgba(212,165,116,0.15)"/>
+  </svg>
+</div>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <h2 class="about-title">Welcome to <span class="highlight">1340</span></h2>
+      <p>1340 is more than a cafe — it's <strong>Savar's premier destination</strong> for handcrafted mocktails, single-origin coffee, and modern Western cuisine. Born from a passion for bringing world-class flavors to Dhaka's heart, every drink and dish is a story.</p>
+      <p>Our signature mocktails feature <span class="highlight">Monin premium syrups</span> — the same flavors trusted by top bartenders globally. From our bold black coffee to our sizzling grilled steaks, every item on our menu is made from scratch with the finest ingredients.</p>
+      <p>Whether you're here for an evening with friends, a quiet coffee, or a late-night steak craving — <span class="highlight">1340 is your place</span>.</p>
+    </div>
+    <img class="about-image" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=85" alt="1340 Cafe Interior" loading="lazy">
+  </div>
+</section>
+
+<section class="coffee-section" id="coffee">
+  <div class="section-header">
+    <h2>Coffee</h2>
+    <p>Single-origin beans, expertly brewed — from sunrise to sunset.</p>
+  </div>
+  <div class="cards-col">
+    <div class="cards-subgrid">
+      <button class="coffee-card">
+        <div class="coffee-card-inner">
+          <div class="coffee-front">
+            <div class="icon"></div>
+            <span class="flip-hint-banner">Tap to explore</span>
+          </div>
+          <div class="coffee-back">
+            <div class="icon"></div>
+            <h3>Espresso</h3>
+            <div class="price">Bdt 150</div>
+            <p>Our signature single-origin espresso — rich, velvety crema with notes of dark chocolate and caramel. The foundation of everything we brew.</p>
+            <div class="coffee-tags"><span>Single Origin</span><span>Dark Roast</span><span>Double Shot</span></div>
+            <div class="flip-back">⟳ flip</div>
+          </div>
+        </div>
+      </button>
+      <button class="coffee-card">
+        <div class="coffee-card-inner">
+          <div class="coffee-front">
+            <div class="icon"></div>
+            <span class="flip-hint-banner">Tap to explore</span>
+          </div>
+          <div class="coffee-back">
+            <div class="icon"></div>
+            <h3>Latte</h3>
+            <div class="price">Bdt 250</div>
+            <p>Silky steamed milk poured over our signature espresso, finished with latte art. Available with oat, almond, or soy milk.</p>
+            <div class="coffee-tags"><span>Milk Options</span><span>Latte Art</span><span>Custom Syrups</span></div>
+            <div class="flip-back">⟳ flip</div>
+          </div>
+        </div>
+      </button>
+      <button class="coffee-card">
+        <div class="coffee-card-inner">
+          <div class="coffee-front">
+            <div class="icon"></div>
+            <span class="flip-hint-banner">Tap to explore</span>
+          </div>
+          <div class="coffee-back">
+            <div class="icon"></div>
+            <h3>Cold Brew</h3>
+            <div class="price">Bdt 300</div>
+            <p>Steeped for 18 hours at cold temperature — naturally sweet, ultra-smooth, and bold. Served over ice with a choice of cream.</p>
+            <div class="coffee-tags"><span>18-Hour Steep</span><span>Low Acid</span><span>Naturally Sweet</span></div>
+            <div class="flip-back">⟳ flip</div>
+          </div>
+        </div>
+      </button>
+      <button class="coffee-card">
+        <div class="coffee-card-inner">
+          <div class="coffee-front">
+            <div class="icon"></div>
+            <span class="flip-hint-banner">Tap to explore</span>
+          </div>
+          <div class="coffee-back">
+            <div class="icon"></div>
+            <h3>Mocha</h3>
+            <div class="price">Bdt 300</div>
+            <p>Indulgent blend of rich cocoa and espresso, topped with whipped cream and chocolate drizzle. A dessert in a cup.</p>
+            <div class="coffee-tags"><span>Belgian Cocoa</span><span>Whipped Cream</span><span>Drizzle Finish</span></div>
+            <div class="flip-back">⟳ flip</div>
+          </div>
+        </div>
+      </button>
+      <button class="coffee-card">
+        <div class="coffee-card-inner">
+          <div class="coffee-front">
+            <div class="icon"></div>
+            <span class="flip-hint-banner">Tap to explore</span>
+          </div>
+          <div class="coffee-back">
+            <div class="icon"></div>
+            <h3>Cappuccino</h3>
+            <div class="price">Bdt 250</div>
+            <p>Equal parts espresso, steamed milk, and velvety foam. Topped with a dusting of cinnamon or cocoa.</p>
+            <div class="coffee-tags"><span>Classic Ratio</span><span>Foam Finish</span><span>Cinnamon Dust</span></div>
+            <div class="flip-back">⟳ flip</div>
+          </div>
+        </div>
+      </button>
+      <button class="coffee-card">
+        <div class="coffee-card-inner">
+          <div class="coffee-front">
+            <div class="icon"></div>
+            <span class="flip-hint-banner">Tap to explore</span>
+          </div>
+          <div class="coffee-back">
+            <div class="icon"></div>
+            <h3>Iced Americano</h3>
+            <div class="price">Bdt 200</div>
+            <p>Double espresso shots poured over chilled water and ice — crisp, refreshing, and boldly caffeinated for those hot Savar afternoons.</p>
+            <div class="coffee-tags"><span>Double Shot</span><span>Refreshing</span><span>Low Calorie</span></div>
+            <div class="flip-back">⟳ flip</div>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1350,60 1440,40 L1440,80 L0,80 Z" fill="rgba(10,10,10,0.7)"/>
+  </svg>
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1350,20 1440,40 L1440,80 L0,80 Z" fill="rgba(212,165,116,0.15)"/>
+  </svg>
+</div>
+
+<section id="menu">
+  <div class="section-header">
+    <h2>Our Menu</h2>
+    <p>Carefully crafted flavors for every moment — from bold mornings to relaxed evenings.</p>
+  </div>
+  <div class="menu-grid" id="menuGrid">
+    <div class="menu-card">
+      <div class="icon"></div>
+      <h3>Coffee</h3>
+    </div>
+    <div class="menu-card">
+      <div class="icon"></div>
+      <h3>Mocktails</h3>
+    </div>
+    <div class="menu-card">
+      <div class="icon"></div>
+      <h3>Steaks &amp; Grills</h3>
+    </div>
+    <div class="menu-card">
+      <div class="icon"></div>
+      <h3>Snacks</h3>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1350,20 1440,40 L1440,80 L0,80 Z" fill="rgba(10,10,10,0.7)"/>
+  </svg>
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1350,60 1440,40 L1440,80 L0,80 Z" fill="rgba(212,165,116,0.15)"/>
+  </svg>
+</div>
+
+<section class="monin-section" id="monin">
+  <h2>Our Flavors</h2>
+  <p>We proudly craft our signature mocktails with <strong>Monin</strong> — the world's finest premium syrups. Every pour brings authentic, vibrant flavor to your glass.</p>
+  <div class="monin-grid">
+    <div class="menu-card flip-card">
+      <div class="menu-card-inner">
+        <div class="menu-card-front">
+          <div class="icon" style="background:url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&q=85&auto=format&fit=crop')center/cover no-repeat;border:none"></div>
+          <span class="flip-hint-banner">Tap to explore</span>
+        </div>
+        <div class="menu-card-back">
+          <div class="icon"></div>
+          <h3>Monin Grenadine</h3>
+          <p>Authentic pomegranate flavor</p>
+          <span class="flip-hint">\u27B3 flip</span>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card flip-card">
+      <div class="menu-card-inner">
+        <div class="menu-card-front">
+          <div class="icon" style="background:url('https://images.unsplash.com/photo-1536935338788-846bb9981813?w=400&q=85&auto=format&fit=crop')center/cover no-repeat;border:none"></div>
+          <span class="flip-hint-banner">Tap to explore</span>
+        </div>
+        <div class="menu-card-back">
+          <div class="icon"></div>
+          <h3>Monin Blueberry</h3>
+          <p>Rich wild blueberry taste</p>
+          <span class="flip-hint">\u27B3 flip</span>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card flip-card">
+      <div class="menu-card-inner">
+        <div class="menu-card-front">
+          <div class="icon" style="background:url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&q=85&auto=format&fit=crop')center/cover no-repeat;border:none"></div>
+          <span class="flip-hint-banner">Tap to explore</span>
+        </div>
+        <div class="menu-card-back">
+          <div class="icon"></div>
+          <h3>Monin Passion Fruit</h3>
+          <p>Tropical passion fruit bliss</p>
+          <span class="flip-hint">\u27B3 flip</span>
+        </div>
+      </div>
+    </div>
+    <div class="menu-card flip-card">
+      <div class="menu-card-inner">
+        <div class="menu-card-front">
+          <div class="icon" style="background:url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&q=85&auto=format&fit=crop')center/cover no-repeat;border:none"></div>
+          <span class="flip-hint-banner">Tap to explore</span>
+        </div>
+        <div class="menu-card-back">
+          <div class="icon"></div>
+          <h3>Monin Vanilla</h3>
+          <p>Smooth Madagascar vanilla</p>
+          <span class="flip-hint">\u27B3 flip</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="golden-hour" id="golden-hour">
+  <div class="gh-content">
+    <div class="gh-label">It's Golden Hour</div>
+    <h2>Sunset at 1340</h2>
+    <p class="gh-sub">Join us as the sun paints Savar in gold. Your perfect evening starts here — handcrafted mocktails, bold coffee, and unforgettable moments.</p>
+    <div class="gh-clock" id="ghClock">
+      <span id="ghH">00</span><span>:</span><span id="ghM">00</span><span>:</span><span id="ghS">00</span>
+      <span class="gh-ampm" id="ghAmPm">PM</span>
+      <div class="gh-status" id="ghStatus">CLOSED</div>
+    </div>
+  </div>
+  <div class="gh-particles" id="ghParticles"></div>
+</section>
+
+<section id="signatures">
+  <div class="section-header">
+    <h2>Signature Mocktails</h2>
+    <p>Our bartenders' finest creations — exclusive to 1340.</p>
+  </div>
+  <div class="cards-col">
+    <div class="cards-subgrid">
+        <div class="menu-card flip-card">
+          <div class="menu-card-inner">
+            <div class="menu-card-front">
+              <div class="icon"></div>
+              <span class="flip-hint-banner">Tap to explore</span>
+            </div>
+            <div class="menu-card-back">
+              <div class="icon"></div>
+              <h3>1340 Sunset</h3>
+              <span class="price">৳380</span>
+              <h4>Ingredients</h4>
+              <p>Monin Passion Fruit<br>Fresh orange juice<br>Fresh lime juice<br>Soda water</p>
+              <div class="ingredient">
+                <span>Fruity</span>
+                <span>Citrus</span>
+                <span>Fizz</span>
+              </div>
+              <span class="flip-hint">⟳ flip</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card flip-card">
+          <div class="menu-card-inner">
+            <div class="menu-card-front">
+              <div class="icon"></div>
+              <span class="flip-hint-banner">Tap to explore</span>
+            </div>
+            <div class="menu-card-back">
+              <div class="icon"></div>
+              <h3>Berry Noir</h3>
+              <span class="price">৳380</span>
+              <h4>Ingredients</h4>
+              <p>Monin Blueberry<br>Muddled blackberries<br>Fresh mint leaves<br>Ginger ale</p>
+              <div class="ingredient">
+                <span>Berry</span>
+                <span>Minty</span>
+                <span>Bold</span>
+              </div>
+              <span class="flip-hint">⟳ flip</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card flip-card">
+          <div class="menu-card-inner">
+            <div class="menu-card-front">
+              <div class="icon"></div>
+              <span class="flip-hint-banner">Tap to explore</span>
+            </div>
+            <div class="menu-card-back">
+              <div class="icon"></div>
+              <h3>Savar Spritz</h3>
+              <span class="price">৳350</span>
+              <h4>Ingredients</h4>
+              <p>Monin Grenadine<br>Fresh lemon juice<br>Sparkling water<br>Rosemary sprig</p>
+              <div class="ingredient">
+                <span>Elegant</span>
+                <span>Crisp</span>
+                <span>Herbal</span>
+              </div>
+              <span class="flip-hint">⟳ flip</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1350,20 1440,40 L1440,80 L0,80 Z" fill="rgba(10,10,10,0.7)"/>
+  </svg>
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1350,60 1440,40 L1440,80 L0,80 Z" fill="rgba(212,165,116,0.15)"/>
+  </svg>
+</div>
+
+<section id="gallery">
+  <div class="section-header">
+    <h2>Gallery</h2>
+    <p>Moments and flavors from 1340.</p>
+  </div>
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=85" alt="Cocktail" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=85" alt="Mocktail glass" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=85" alt="Coffee art" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=600&q=85" alt="Drink pour" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&q=85" alt="Bar counter" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=85" alt="Cafe interior" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=600&q=85" alt="Coffee beans" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=85" alt="Whiskey glass" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=85" alt="Cafe vibe" loading="lazy">
+  </div>
+</section>
+
+<section class="reviews-section" id="reviews">
+  <div class="section-header">
+    <h2>What People Say</h2>
+    <p>Real words from real guests at 1340.</p>
+  </div>
+  <div class="reviews-container" id="reviewsContainer"></div>
+  <div class="review-dots" id="reviewDots"></div>
+</section>
+
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1350,60 1440,40 L1440,80 L0,80 Z" fill="rgba(10,10,10,0.7)"/>
+  </svg>
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1350,20 1440,40 L1440,80 L0,80 Z" fill="rgba(212,165,116,0.15)"/>
+  </svg>
+</div>
+
+<section id="location">
+  <div class="location-wrap">
+    <div class="location-info">
+      <h2>Find Us</h2>
+      <p><span class="label">📍 Address:</span> B, Life Lead Tower, 5, Talbag Thana Rd, Savar 1340</p>
+      <p><span class="label">🕐 Hours:</span> Fri–Wed 3–10 PM · Thu Closed</p>
+      <p><span class="label">📞 Call:</span> 01711-963469</p>
+      <p style="margin-top:1.5rem;color:var(--muted);font-size:0.9rem">Life Lead Tower, Talbag Thana Road. Follow the glow — you'll find us.</p>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=Life+Lead+Tower+Talbag+Thana+Road+Savar+1340&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1350,20 1440,40 L1440,80 L0,80 Z" fill="rgba(10,10,10,0.7)"/>
+  </svg>
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1350,60 1440,40 L1440,80 L0,80 Z" fill="rgba(212,165,116,0.15)"/>
+  </svg>
+</div>
+
+<section class="contact-section" id="contact">
+  <h2>Get in Touch</h2>
+  <div class="contact-links">
+    <a class="contact-btn" href="https://web.facebook.com/profile.php?id=61557183885157" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Follow @1340
+    </a>
+    <a class="contact-btn" href="tel:01711963469">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Us
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <div class="footer-logo">1340</div>
+    <p class="footer-tagline">Coffee · Mocktails · Cuisine</p>
+  </div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#coffee">Coffee</a>
+    <a href="#signatures">Signatures</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://web.facebook.com/profile.php?id=61557183885157" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/1340savar" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+  </div>
+  <p class="footer-copy">1340 <span class="heart">♥</span> Savar, Dhaka, Bangladesh</p>
+  <p class="footer-meta">Crafted with love for the 1340 family</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" onerror="console.warn('GSAP CDN failed to load')"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" onerror="console.warn('ScrollTrigger CDN failed to load')"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// TOUCH DETECTION
+if ('ontouchstart' in window) document.body.classList.add('touch');
+
+// NAVBAR SCROLL
+const nav = document.querySelector('nav');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const scroll = window.scrollY;
+  if (scroll > 80) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+  if (scroll > lastScroll && scroll > 200) nav.style.transform = 'translateY(-100%)';
+  else nav.style.transform = 'translateY(0)';
+  lastScroll = scroll;
+});
+
+// PRELOADER
+const preloaderTl = gsap.timeline();
+preloaderTl
+  .to('#preloader .pl-logo span', { opacity: 1, y: -20, duration: 0.6, stagger: 0.12, ease: 'back.out(2)' })
+  .to('#preloader .pl-bar', { scaleX: 1, duration: 0.5, ease: 'power2.out' }, '-=0.2')
+  .to('#preloader .pl-tagline', { opacity: 1, y: -8, duration: 0.5, ease: 'power2.out' }, '-=0.3')
+  .to('#preloader', { opacity: 0, duration: 0.6, ease: 'power2.in' }, '+=0.6')
+  .set('#preloader', { display: 'none' });
+
+// HERO TIMELINE
+const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' }, paused: true });
+heroTl
+  .to('.hero video', { scale: 1, duration: 2.5, ease: 'power2.out' }, 0)
+  .to('.hero .overlay', { opacity: 0.6, duration: 1.5, ease: 'power2.out' }, 0)
+  .fromTo('.letter', { y: 80, opacity: 0, rotateX: -90 }, { y: 0, opacity: 1, rotateX: 0, duration: 1, stagger: 0.12, ease: 'back.out(1.7)' }, 0.3)
+  .to('.hero-sub', { y: 0, opacity: 1, duration: 0.8 }, 1.2)
+  .to('.hero-tagline', { opacity: 1, duration: 0.8 }, 1.6)
+  .to('.scroll-indicator', { opacity: 1, duration: 0.6 }, 2);
+
+// Start hero after preloader
+preloaderTl.call(() => heroTl.play());
+
+// HOVER VIDEO INTERACTION
+const heroTitle = document.querySelector('.hero-title');
+const hoverVideoWrap = document.getElementById('heroHoverVideo');
+const hoverVid = hoverVideoWrap?.querySelector('video');
+if (heroTitle && hoverVideoWrap) {
+  heroTitle.addEventListener('mouseenter', () => {
+    gsap.to('.letter', { scale: 1.15, color: '#ffffff', duration: 0.4, stagger: 0.04, ease: 'power2.out' });
+    gsap.to(hoverVideoWrap, { opacity: 1, duration: 0.5, ease: 'power2.out' });
+    if (hoverVid) { hoverVid.currentTime = 0; hoverVid.play(); }
+  });
+  heroTitle.addEventListener('mouseleave', () => {
+    gsap.to('.letter', { scale: 1, color: '#C41E3A', duration: 0.4, stagger: 0.04, ease: 'power2.out' });
+    gsap.to(hoverVideoWrap, { opacity: 0, duration: 0.5, ease: 'power2.out' });
+    if (hoverVid) hoverVid.pause();
+  });
+}
+
+var PLACE_ID = '';
+var API_KEY = 'AIzaSyBJ80wYQ-0DQTpH1o52V2lxjHIVQgbGEA0';
+
+var fallback = [
+  { stars: 5, text: 'Amazing coffee and vibe at 1340! The mocktails are a must-try.', author: 'Rafiq', role: 'Google Review' },
+  { stars: 5, text: 'Best place in Savar for a relaxed evening. Great music, great drinks.', author: 'Sara', role: 'Google Review' },
+  { stars: 4, text: 'The steak was incredible. Will definitely come back!', author: 'Tanvir', role: 'Google Review' },
+  { stars: 5, text: 'Love the atmosphere and the Monin mocktails are world-class.', author: 'Nadia', role: 'Google Review' },
+  { stars: 4, text: 'Cozy place, friendly staff, and excellent coffee.', author: 'Hasan', role: 'Google Review' },
+];
+
+function renderReviews(list) {
+  container.innerHTML = list.map(function(r, i) {
+    var stars = '';
+    for (var s = 0; s < 5; s++) stars += s < r.stars ? '\u2605' : '\u2606';
+    return '<div class="review-slide' + (i === 0 ? ' active' : '') + '">' +
+      '<div class="review-stars">' + stars + '</div>' +
+      '<p class="review-text">\u201c' + r.text + '\u201d</p>' +
+      '<span class="review-author">' + r.author + '</span>' +
+      '<span class="review-role">' + r.role + '</span></div>';
+  }).join('');
+  dotsWrap.innerHTML = list.map(function(r, i) {
+    return '<button class="review-dot' + (i === 0 ? ' active' : '') + '" data-index="' + i + '"></button>';
+  }).join('');
+  initCarousel();
+}
+
+var container = document.getElementById('reviewsContainer');
+var dotsWrap = document.getElementById('reviewDots');
+var current = 0, interval, paused = false;
+
+function initCarousel() {
+  var slides = container.querySelectorAll('.review-slide');
+  var dots = dotsWrap.querySelectorAll('.review-dot');
+  if (!slides.length) { renderReviews(fallback); return; }
+  current = 0;
+  function show(idx) {
+    slides.forEach(function(s,i){ s.classList.toggle('active', i === idx); });
+    dots.forEach(function(d,i){ d.classList.toggle('active', i === idx); });
+    current = idx;
+  }
+  dots.forEach(function(d){
+    d.addEventListener('click', function(){ clearInterval(interval); show(parseInt(d.dataset.index)); startAuto(); });
+  });
+  function startAuto() { clearInterval(interval); interval = setInterval(function(){ if (!paused) show((current + 1) % slides.length); }, 5000); }
+  container.addEventListener('mouseenter', function(){ paused = true; });
+  container.addEventListener('mouseleave', function(){ paused = false; });
+  startAuto();
+}
+
+function fetchGoogleReviews() {
+  if (!PLACE_ID || !API_KEY || PLACE_ID.indexOf('REPLACE') >= 0 || API_KEY.indexOf('REPLACE') >= 0) {
+    renderReviews(fallback);
+    return;
+  }
+  fetch('https://places.googleapis.com/v1/places/' + encodeURIComponent(PLACE_ID), {
+    method: 'GET',
+    headers: { 'X-Goog-Api-Key': API_KEY, 'X-Goog-FieldMask': 'reviews,rating' }
+  }).then(function(r){
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(function(data){
+    if (!data.reviews || !data.reviews.length) throw new Error('No reviews');
+    var mapped = data.reviews.slice(0, 12).map(function(rv){
+      var txt = rv.text && rv.text.text ? rv.text.text : '';
+      var name = rv.authorAttribution ? rv.authorAttribution.displayName : 'Google User';
+      var time = rv.relativePublishTimeDescription || '';
+      return { stars: Math.round(rv.rating || 5), text: txt, author: name, role: time ? 'Reviewed ' + time : 'Google Review' };
+    });
+    renderReviews(mapped);
+  }).catch(function(err){
+    console.warn('Google Reviews fetch failed, showing fallback:', err.message);
+    renderReviews(fallback);
+  });
+}
+
+fetchGoogleReviews();
+
+// DIRECTIONAL SECTION REVEALS
+gsap.utils.toArray('section:not(.hero)').forEach(section => {
+  const isEven = [...document.querySelectorAll('section:not(.hero)')].indexOf(section) % 2 === 0;
+  const h2 = section.querySelector('.section-header h2, .about-title, .monin-section h2, .location-info h2, .contact-section h2');
+  const items = section.querySelectorAll('.menu-card, .signature-card, .gallery-grid img');
+  const st = { trigger: section, start: 'top 85%', toggleActions: 'play none none reverse' };
+  if (h2) {
+    gsap.from(h2, { scrollTrigger: st, y: 70, opacity: 0, duration: 0.9, ease: 'power4.out' });
+  }
+  if (items.length) {
+    const dir = isEven ? -40 : 40;
+    gsap.from(items, { scrollTrigger: { trigger: section, start: 'top 82%', toggleActions: 'play none none reverse' }, x: dir, opacity: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out' });
+  }
+});
+
+// GOLDEN GLOW DRIFT — light passing through words
+(function(){
+  var editing = localStorage.getItem('1340-edit-mode') === 'true';
+  if (editing) return;
+  var els = [].slice.call(document.querySelectorAll('.about-title, #about .about-text p'));
+  var words = [];
+  els.forEach(function(el){
+    var parts = el.textContent.split(/(\s+)/);
+    el.textContent = '';
+    parts.forEach(function(p){
+      var sp = document.createElement('span');
+      sp.className = 'glow-word';
+      sp.textContent = p;
+      el.appendChild(sp);
+      if (p.trim()) words.push(sp);
+    });
+  });
+
+  function glow(){
+    var w = words[Math.floor(Math.random() * words.length)];
+    w.style.textShadow = '0 0 15px #D4A574, 0 0 40px rgba(212,165,116,0.6), 0 0 80px rgba(212,165,116,0.3)';
+    w.style.color = '#D4A574';
+    setTimeout(function(){
+      w.style.textShadow = '0 0 0 transparent';
+      w.style.color = '';
+      setTimeout(glow, 2000 + Math.random() * 3000);
+    }, 1200 + Math.random() * 800);
+  }
+  setTimeout(glow, 2000);
+})();
+
+gsap.fromTo('.about-image', { y: 40, opacity: 0 }, { scrollTrigger: { trigger: '#about', start: 'top 75%' }, y: 0, opacity: 1, duration: 2, ease: 'power2.out' });
+
+// LOCATION WITH SPLIT DIRECTION
+gsap.from('.location-info', { scrollTrigger: { trigger: '#location', start: 'top 75%' }, x: -60, opacity: 0, duration: 1, ease: 'power4.out' });
+gsap.from('.map-wrap', { scrollTrigger: { trigger: '#location', start: 'top 75%' }, x: 60, opacity: 0, duration: 1, ease: 'power4.out' }, '-=1');
+
+// CONTACT
+gsap.from('.contact-btn', { scrollTrigger: { trigger: '#contact', start: 'top 80%' }, y: 40, opacity: 0, duration: 0.6, stagger: 0.15, ease: 'back.out(1.7)' });
+
+// HERO PARALLAX ON MOUSE
+document.querySelector('.hero')?.addEventListener('mousemove', (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 15;
+  const y = (e.clientY / window.innerHeight - 0.5) * 15;
+  gsap.to('.hero video', { x, y, duration: 1, ease: 'power2.out', overwrite: 'auto' });
+});
+
+// MOBILE MENU CLOSE ON CLICK
+document.querySelectorAll('nav .links a').forEach(a => {
+  a.addEventListener('click', () => document.querySelector('nav .links').classList.remove('open'));
+});
+
+// GOLDEN HOUR CLOCK
+(function(){
+function updateClock(){
+  var d=new Date();
+  var ms=d.getTime()+d.getTimezoneOffset()*60000+21600000; // UTC+6 = Asia/Dhaka
+  var bd=new Date(ms);
+  var h=bd.getHours(),m=bd.getMinutes(),s=bd.getSeconds(),ap=h>=12?'PM':'AM';
+  if(h>12)h-=12;if(h===0)h=12;
+  document.getElementById('ghH').textContent=String(h).padStart(2,'0');
+  document.getElementById('ghM').textContent=String(m).padStart(2,'0');
+  document.getElementById('ghS').textContent=String(s).padStart(2,'0');
+  document.getElementById('ghAmPm').textContent=ap;
+  var day=bd.getDay(),st=document.getElementById('ghStatus');
+  var open=day!==4&&bd.getHours()>=15&&bd.getHours()<22;
+  st.textContent=open?'OPEN':'CLOSED';
+  st.className='gh-status '+(open?'open':'closed');
+}
+updateClock();
+setInterval(updateClock,1000);
+})();
+
+// GOLDEN HOUR PARTICLES
+(function(){
+  const container = document.getElementById('ghParticles');
+  if (!container) return;
+  for (let i = 0; i < 50; i++) {
+    const p = document.createElement('div');
+    p.className = 'gh-particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (8 + Math.random() * 12) + 's';
+    p.style.animationDelay = Math.random() * 10 + 's';
+    p.style.width = p.style.height = (2 + Math.random() * 3) + 'px';
+    container.appendChild(p);
+  }
+})();
+
+// RANDOMIZE LED RACING DOT SPEEDS + COMET TRAIL
+document.querySelectorAll('.coffee-card, .menu-card.flip-card').forEach(function(card){
+  var base;
+  if (card.classList.contains('coffee-card')) base = 3.45;
+  else if (card.classList.contains('flip-card')) base = 4.6;
+  else base = 3.5;
+  var r = 1.15 + Math.random() * 0.35;
+  var dur = (base * r).toFixed(2);
+  card.style.setProperty('--led-dur', dur + 's');
+  card.style.setProperty('--led-trail', '-' + (0.8 + Math.random() * 1.2).toFixed(3) + 's');
+});
+
+// CARD MAGNIFY — flip + enlarge + center
+(function(){
+var magOverlay=document.createElement('div');
+magOverlay.className='card-modal-overlay';
+document.body.appendChild(magOverlay);
+var magCard=null,magPl=null;
+
+window.openMag=function openMag(card){
+  if(magCard)closeMag();
+  var rect=card.getBoundingClientRect(),w=window.innerWidth,h=window.innerHeight;
+  magPl=document.createElement('div');
+  magPl.style.cssText='width:'+rect.width+'px;height:'+rect.height+'px;visibility:hidden;';
+  card.parentNode.insertBefore(magPl,card);
+  gsap.set(card,{position:'fixed',top:rect.top,left:rect.left,width:rect.width,height:rect.height,margin:0,zIndex:99999,minHeight:'auto'});
+  card.classList.add('flipped','magnified');
+  magOverlay.classList.add('active');
+  document.body.style.overflow='hidden';
+  gsap.to(card,{top:(h-rect.height)/2,left:(w-rect.width)/2,scale:1.5,duration:0.5,ease:'power3.out'});
+  magCard=card;
+};
+
+window.closeMag=function closeMag(){
+  if(!magCard||!magPl)return;
+  var card=magCard,pl=magPl,prect=pl.getBoundingClientRect();
+  gsap.to(card,{top:prect.top,left:prect.left,width:prect.width,height:prect.height,x:0,y:0,scale:1,duration:0.4,ease:'power3.in',onComplete:function(){
+    card.classList.remove('magnified','flipped');
+    card.style.position='';card.style.top='';card.style.left='';card.style.width='';card.style.height='';
+    card.style.margin='';card.style.zIndex='';card.style.minHeight='';
+    if(pl.parentNode)pl.parentNode.removeChild(pl);
+    magOverlay.classList.remove('active');
+    document.body.style.overflow='';
+    magCard=null;magPl=null;
+  }});
+};
+
+document.querySelectorAll('.coffee-card,.menu-card.flip-card').forEach(function(card){
+  card.addEventListener('click',function(e){
+    if(document.body.classList.contains('edit-mode'))return;
+    if(this.classList.contains('magnified'))closeMag();else openMag(this);
+  });
+});
+magOverlay.addEventListener('click',closeMag);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMag()});
+})();
+
+// COFFEE SECTION REVEAL
+gsap.from('.coffee-card', {
+  scrollTrigger: { trigger: '#coffee', start: 'top 80%' },
+  y: 60, opacity: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out'
+});
+
+// GOLDEN HOUR PARALLAX
+gsap.from('.golden-hour .gh-content', {
+  scrollTrigger: { trigger: '.golden-hour', start: 'top bottom', end: 'bottom top', scrub: 1 },
+  y: 120, opacity: 0, ease: 'power1.out'
+});
+
+// AMBIENT FLOAT (non-menu items)
+gsap.utils.toArray('.signature-card, .monin-grid .menu-card.flip-card, .gallery-grid img').forEach(function(el){
+  gsap.to(el, {
+    y: -8 + Math.random() * 16,
+    duration: 2.5 + Math.random() * 2,
+    yoyo: true, repeat: -1, ease: 'sine.inOut',
+    delay: Math.random() * 2
+  });
+});
+
+// SUN ARC + MOON DESCENT + SCROLL BAR
+(function(){
+var ambientSun=document.querySelector('.ambient-sun'),moon=document.querySelector('.moon'),scrollBar=document.querySelector('.scroll-bar'),hero=document.querySelector('.hero'),ghSec=document.querySelector('.golden-hour');
+if(!ambientSun)return;
+function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+function lerp(a,b,t){return a+(b-a)*t}
+function smoothstep(t){return t*t*(3-2*t)}
+function update(){
+  var sy=window.scrollY||window.pageYOffset,wh=window.innerHeight,dh=document.documentElement.scrollHeight||document.body.scrollHeight;
+  var maxScroll=dh-wh,sunEnd=Math.min(ghSec?ghSec.offsetTop:maxScroll,maxScroll),sunT=sunEnd>0?clamp(sy/sunEnd,0,1):clamp(sy/(maxScroll||1),0,1);
+  var st=smoothstep(sunT),l=lerp(75,50,st),arc=4*sunT*(1-sunT)*15,t=lerp(42,52,st)+arc,sc=1.18,sunOp=sunT<0.5?1:1-clamp((sunT-0.5)/0.5,0,1);
+  if(scrollBar)scrollBar.style.width=clamp(sy/(dh-wh||1),0,1)*100+'%';
+  var now=Date.now(),breath=0.5+Math.sin(now/2200)*0.5;
+  ambientSun.style.cssText='left:'+l+'%;top:'+t+'%;transform:translate(-50%,-50%) scale('+sc+');opacity:'+sunOp+';filter:brightness('+lerp(1,1.3,breath)+')';
+  var mnSt=sunEnd,mnEnd=dh-wh,mnSp=mnEnd-mnSt,mnT=mnSp>0?clamp((sy-mnSt)/mnSp,0,1):0;
+  var mst=smoothstep(mnT),ml=lerp(50,68,mst),marc=4*mnT*(1-mnT)*15,mt=lerp(16,82,mst)+marc,mnOp=mnT<0.25?clamp(mnT/0.25,0,1):1,msc=lerp(0.65,1.2,mnT),mbreath=0.5+Math.sin(now/2800)*0.5;
+  moon.style.cssText='left:'+ml+'%;top:'+mt+'%;transform:translate(-50%,-50%) scale('+msc+');opacity:'+(mnOp*0.95)+';filter:brightness('+lerp(1,1.2,mbreath)+')';
+}
+window.addEventListener('resize',update);
+(function anim(){update();requestAnimationFrame(anim)})();
+})();
+
+</script>
+<div class="menu-fullscreen" id="menuFS"><img src="" alt="Menu"></div>
+<script>
+(function(){
+var PW_HASH = '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4';
+var editing = false, authd = sessionStorage.getItem('1340-auth') === 'true';
+if (authd) editing = localStorage.getItem('1340-edit-mode') === 'true' || new URLSearchParams(location.search).has('edit');
+var sel = 'h2:not(nav h2), h3, h4, p, li, .price, .contact-btn, .footer-tagline, ' +
+  '.review-text, .review-author, .review-role, .hero-sub, .hero-tagline, .label, ' +
+  '.footer-links a, .about-title, .highlight, .coffee-tags span, .ingredient span, .gh-sub';
+
+var newCoffeeHTML='<button class="coffee-card"><div class="coffee-card-inner"><div class="coffee-front"><div class="icon"></div><span class="flip-hint-banner">Tap to explore</span></div><div class="coffee-back"><div class="icon"></div><h3>New Drink</h3><div class="price">Bdt 000</div><p>Description</p><div class="coffee-tags"><span>Tag</span></div><div class="flip-back">\u27B3 flip</div></div></div></button>';
+var newSigHTML='<div class="menu-card flip-card"><div class="menu-card-inner"><div class="menu-card-front"><div class="icon"></div><span class="flip-hint-banner">Tap to explore</span></div><div class="menu-card-back"><div class="icon"></div><h3>New Mocktail</h3><span class="price">\u09F3000</span><h4>Ingredients</h4><p>Ingredients...</p><div class="ingredient"><span>Flavor</span></div><span class="flip-hint">\u27B3 flip</span></div></div></div>';
+var newMenuHTML='<div class="menu-card"><div class="icon"></div><h3>New Menu</h3></div>';
+var newFlavorHTML='<div class="menu-card flip-card"><div class="menu-card-inner"><div class="menu-card-front"><div class="icon"></div><span class="flip-hint-banner">Tap to explore</span></div><div class="menu-card-back"><div class="icon"></div><h3>New Flavor</h3><p>Description</p><span class="flip-hint">\u27B3 flip</span></div></div></div>';
+
+function setupNewCard(card){
+  if (card.classList.contains('coffee-card')||card.classList.contains('flip-card')){
+    card.addEventListener('click',function(e){
+      if(document.body.classList.contains('edit-mode'))return;
+      if(this.classList.contains('magnified'))closeMag();else openMag(this);
+    });
+  }
+  var base=card.classList.contains('coffee-card')?3.45:card.classList.contains('flip-card')?4.6:3.5;
+  var r=1.15+Math.random()*0.35;
+  card.style.setProperty('--led-dur',(base*r).toFixed(2)+'s');
+  card.style.setProperty('--led-trail','-'+(0.8+Math.random()*1.2).toFixed(3)+'s');
+  if(document.body.classList.contains('edit-mode')){
+    var db=document.createElement('button');
+    db.className='admin-del-btn';
+    db.textContent='\u2715';
+    card.appendChild(db);
+    card.querySelectorAll(sel).forEach(function(el){el.contentEditable=true});
+  }
+}
+
+var bar = document.createElement('div');
+bar.id = 'admin-bar';
+bar.innerHTML = '<button id="ab-edit">' + (editing ? '\u2715' : '\u270E') + '</button>' +
+  '<button id="ab-dl" style="display:' + (editing ? '' : 'none') + '">\u2B07 Save</button>';
+document.body.appendChild(bar);
+
+function setEdit(on){
+  editing = on;
+  localStorage.setItem('1340-edit-mode', on);
+  document.body.classList.toggle('edit-mode', on);
+  document.getElementById('ab-edit').textContent = on ? '\u2715' : '\u270E';
+  document.getElementById('ab-dl').style.display = on ? '' : 'none';
+
+  if (on){
+    if(typeof closeMag==='function'){
+      var mag=document.querySelector('.magnified');if(mag)gsap.killTweensOf(mag);
+      closeMag();
+    }
+    document.querySelectorAll('.coffee-card, .menu-card').forEach(function(c){
+      c.classList.remove('flipped');
+      if(!c.querySelector('.admin-del-btn')){
+        var db=document.createElement('button');
+        db.className='admin-del-btn';
+        db.textContent='\u2715';
+        c.appendChild(db);
+      }
+    });
+    ['#coffee .cards-subgrid','#signatures .cards-subgrid','#menuGrid','#monin .monin-grid'].forEach(function(sel2){
+      var g=document.querySelector(sel2);
+      if(g&&!g.querySelector('.admin-add-btn')){
+        var ab=document.createElement('div');
+        ab.className='admin-add-btn';
+        ab.textContent='+';
+        g.appendChild(ab);
+      }
+    });
+    document.querySelectorAll('.coffee-tags, .ingredient').forEach(function(tc){
+      if(tc.querySelector('.tag-add-btn'))return;
+      tc.querySelectorAll('span').forEach(function(s){
+        if(!s.querySelector('.tag-del-btn')){
+          var db=document.createElement('button');
+          db.className='tag-del-btn';db.textContent='\u2715';
+          s.appendChild(db);
+        }
+      });
+      var ab=document.createElement('button');
+      ab.className='tag-add-btn';ab.textContent='+';
+      tc.appendChild(ab);
+    });
+    document.querySelectorAll(sel).forEach(function(el){ el.contentEditable = true });
+  } else {
+    document.querySelectorAll('.admin-del-btn,.admin-add-btn,.tag-del-btn,.tag-add-btn').forEach(function(el){el.parentNode&&el.parentNode.removeChild(el)});
+    document.querySelectorAll('[contenteditable]').forEach(function(el){ el.removeAttribute('contenteditable') });
+  }
+}
+
+document.getElementById('ab-edit').onclick = function(){ setEdit(!editing) };
+
+document.getElementById('ab-dl').onclick = function(){
+  document.querySelectorAll('[contenteditable]').forEach(function(el){ el.removeAttribute('contenteditable') });
+  var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([html], {type:'text/html'}));
+  a.download = '1340-website.html';
+  a.click();
+};
+
+function tryAuth(pw){
+  crypto.subtle.digest('SHA-256',new TextEncoder().encode(pw)).then(function(buf){
+    var hash=Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0')}).join('');
+    if(hash===PW_HASH){authd=true;sessionStorage.setItem('1340-auth','true');setEdit(true)}
+    else alert('Incorrect password');
+  });
+}
+function promptPW(){var p=prompt('Enter admin password:');if(p)tryAuth(p)}
+
+document.addEventListener('keydown', function(ev){
+  if (ev.ctrlKey && ev.shiftKey && ev.key === 'E'){ ev.preventDefault(); if(!authd)promptPW(); else setEdit(!editing) }
+});
+
+function compressImg(dataUrl, maxW, maxH, cb){
+  var img = new Image();
+  img.onload = function(){
+    var r = Math.min(maxW/img.width, maxH/img.height);
+    var w = Math.round(img.width * r), h = Math.round(img.height * r);
+    var c = document.createElement('canvas');
+    c.width = w; c.height = h;
+    var ctx = c.getContext('2d');
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(img, 0, 0, w, h);
+    cb(c.toDataURL('image/jpeg', 0.85));
+  };
+  img.src = dataUrl;
+}
+
+document.addEventListener('click', function(ev){
+  if (!editing) return;
+  var addBtn = ev.target.closest('.admin-add-btn');
+  if (addBtn){
+    ev.stopPropagation();
+    var grid = addBtn.parentNode;
+    var isMenu = grid.id==='menuGrid';
+    var isSig = grid.closest('#signatures');
+    var isMonin = grid.closest('#monin');
+    var html = isMenu ? newMenuHTML : (isMonin ? newFlavorHTML : (isSig ? newSigHTML : newCoffeeHTML));
+    var temp = document.createElement('div');
+    temp.innerHTML = html;
+    var card = temp.firstElementChild;
+    grid.insertBefore(card, addBtn);
+    if(!isMenu)setupNewCard(card);
+    if(grid.closest('#coffee')){
+      gsap.from(card,{scrollTrigger:{trigger:'#coffee',start:'top 80%'},y:60,opacity:0,duration:0.8,ease:'power3.out'});
+    }else if(isSig||isMenu){
+      var sec=grid.closest('section')||(isMenu?document.getElementById('menu'):null);
+      if(sec){
+        var idx=Array.prototype.indexOf.call(document.querySelectorAll('section:not(.hero)'),sec);
+        gsap.from(card,{scrollTrigger:{trigger:sec,start:'top 82%',toggleActions:'play none none reverse'},x:(idx%2===0?-40:40),opacity:0,duration:0.8,ease:'power3.out'});
+      }
+    }
+    if(isMonin){
+      gsap.to(card,{y:-8+Math.random()*16,duration:2.5+Math.random()*2,yoyo:true,repeat:-1,ease:'sine.inOut',delay:Math.random()*2});
+    }
+    return;
+  }
+  var tagDel = ev.target.closest('.tag-del-btn');
+  if (tagDel){
+    ev.stopPropagation();
+    var sp = tagDel.closest('span');
+    if(sp&&sp.parentNode)sp.parentNode.removeChild(sp);
+    return;
+  }
+  var tagAdd = ev.target.closest('.tag-add-btn');
+  if (tagAdd){
+    ev.stopPropagation();
+    var tc = tagAdd.parentNode;
+    if(tc.querySelectorAll('span:not(.tag-add-btn)').length>=5)return;
+    var ns=document.createElement('span');
+    ns.textContent='New Tag';ns.contentEditable=true;
+    var db=document.createElement('button');
+    db.className='tag-del-btn';db.textContent='\u2715';
+    ns.appendChild(db);
+    tc.insertBefore(ns,tagAdd);
+    return;
+  }
+  var delBtn = ev.target.closest('.admin-del-btn');
+  if (delBtn){
+    ev.stopPropagation();
+    var card = delBtn.closest('.coffee-card, .menu-card');
+    if (card && confirm('Delete this card?')){
+      if (card.classList.contains('magnified')) closeMag();
+      card.parentNode.removeChild(card);
+    }
+    return;
+  }
+  var t = ev.target.closest('.icon');
+  if (t){
+    var backIcon = t.closest('.coffee-back, .menu-card-back');
+    var menuCard = t.closest('.menu-card:not(.flip-card)');
+    if (!backIcon && !menuCard) return;
+    ev.stopPropagation();
+    var inp = document.createElement('input');
+    inp.type = 'file';
+    inp.accept = 'image/*';
+    inp.onchange = function(ev2){
+      var f = ev2.target.files[0];
+      if (!f) return;
+      var card = t.closest('.coffee-card, .menu-card.flip-card');
+      var menuCard = t.closest('.menu-card:not(.flip-card)');
+      var cardFront = card && card.querySelector('.coffee-front, .menu-card-front');
+      var mw = (cardFront && cardFront.offsetWidth) || (menuCard && menuCard.offsetWidth) || 400;
+      var mh = (cardFront && cardFront.offsetHeight) || (menuCard && menuCard.offsetHeight) || 500;
+      var r = new FileReader();
+      r.onload = function(re){
+        compressImg(re.target.result, mw, mh, function(compressed){
+          var url = 'url("' + compressed + '")';
+          t.style.backgroundImage = url;
+          t.classList.add('has-img');
+          if (card){
+            var front = card.querySelector('.coffee-front .icon, .menu-card-front .icon');
+            if (front){ front.style.backgroundImage = url; front.classList.add('has-img') }
+          }
+          saveImgs();
+        });
+      };
+      r.readAsDataURL(f);
+    };
+    inp.click();
+    return;
+  }
+  var im = ev.target.closest('img');
+  if (im && !im.closest('#admin-bar')){
+    ev.stopPropagation();
+    var inp = document.createElement('input');
+    inp.type = 'file';
+    inp.accept = 'image/*';
+    inp.onchange = function(ev2){
+      var f = ev2.target.files[0];
+      if (!f) return;
+      var r = new FileReader();
+      r.onload = function(re){ im.src = re.target.result; saveImgs() };
+      r.readAsDataURL(f);
+    };
+    inp.click();
+  }
+});
+
+function saveImgs(){
+  var d = {imgs:{}, icons:{}, menus:{}};
+  document.querySelectorAll('img').forEach(function(im, i){
+    if (im.src.startsWith('data:')) d.imgs['i'+i] = im.src;
+  });
+  document.querySelectorAll('#coffee .cards-subgrid .coffee-card').forEach(function(card, idx){
+    var ic = card.querySelector('.coffee-back .icon.has-img');
+    if (ic) d.icons['coffee-'+idx] = ic.style.backgroundImage;
+  });
+  document.querySelectorAll('#signatures .cards-subgrid .menu-card.flip-card').forEach(function(card, idx){
+    var ic = card.querySelector('.menu-card-back .icon.has-img');
+    if (ic) d.icons['sig-'+idx] = ic.style.backgroundImage;
+  });
+  document.querySelectorAll('#monin .monin-grid .menu-card.flip-card').forEach(function(card, idx){
+    var ic = card.querySelector('.menu-card-back .icon.has-img');
+    if (ic) d.icons['monin-'+idx] = ic.style.backgroundImage;
+  });
+  document.querySelectorAll('#menuGrid .menu-card').forEach(function(card, idx){
+    var ic=card.querySelector('.icon.has-img');
+    if(ic)d.menus['menu-'+idx]=ic.style.backgroundImage;
+  });
+  localStorage.setItem('1340-data', JSON.stringify(d));
+}
+
+try {
+  var d = JSON.parse(localStorage.getItem('1340-data') || '{}');
+  if (d.imgs) Object.keys(d.imgs).forEach(function(k, i){
+    var im = document.querySelectorAll('img')[parseInt(k.replace('i',''))];
+    if (im) im.src = d.imgs[k];
+  });
+  if (d.icons){
+    var coffeeCards = document.querySelectorAll('#coffee .cards-subgrid .coffee-card');
+    var sigCards = document.querySelectorAll('#signatures .cards-subgrid .menu-card.flip-card');
+    var moninCards = document.querySelectorAll('#monin .monin-grid .menu-card.flip-card');
+    Object.keys(d.icons).forEach(function(k){
+      var parts = k.split('-');
+      var idx = parseInt(parts[1]);
+      var card;
+      if (parts[0]==='coffee') card = coffeeCards[idx];
+      else if (parts[0]==='sig') card = sigCards[idx];
+      else if (parts[0]==='monin') card = moninCards[idx];
+      if (card){
+        var ic = card.querySelector('.coffee-back .icon, .menu-card-back .icon');
+        if (ic){
+          ic.style.background = d.icons[k]; ic.classList.add('has-img');
+          var front = card.querySelector('.coffee-front .icon, .menu-card-front .icon');
+          if (front){ front.style.background = d.icons[k]; front.classList.add('has-img') }
+        }
+      }
+    });
+  }
+  if(d.menus){
+    var menuCards=document.querySelectorAll('#menuGrid .menu-card');
+    Object.keys(d.menus).forEach(function(k){
+      var idx=parseInt(k.split('-')[1]);
+      var ic=menuCards[idx]&&menuCards[idx].querySelector('.icon');
+      if(ic){ic.style.background=d.menus[k];ic.classList.add('has-img')}
+    });
+  }
+} catch(ex){}
+
+if (editing) setEdit(true);
+else if (!authd && new URLSearchParams(location.search).has('edit')) promptPW();
+
+// MENU FULLSCREEN VIEWER
+var menuFS = document.getElementById('menuFS');
+var menuFSImg = menuFS.querySelector('img');
+document.getElementById('menu').addEventListener('click', function(ev){
+  if (editing) return;
+  var card = ev.target.closest('.menu-card');
+  if (card){
+    var ic = card.querySelector('.icon.has-img');
+    if (ic){
+      var bg = ic.style.backgroundImage;
+      var url = bg.replace(/^url\(["']?|["']?\)$/g, '');
+      menuFSImg.src = url;
+      menuFS.classList.add('open');
+    }
+  }
+});
+menuFS.addEventListener('click', function(){ menuFS.classList.remove('open') });
+document.addEventListener('keydown', function(ev){
+  if (ev.key === 'Escape') menuFS.classList.remove('open');
+});
+})();
+</script>
+</body>
+</html>
