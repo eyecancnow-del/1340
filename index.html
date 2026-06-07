@@ -1865,18 +1865,18 @@ async function ghApi(path, method, body, quiet){
 }
 
 async function ghGetSha(path){
-  var res = await ghApi('/contents/' + path + '?ref=' + GH_BRANCH, 'GET', null, true);
+  var res = await ghApi('/contents/' + path + '?ref=' + GH_BRANCH + '&t=' + Date.now(), 'GET', null, true);
   if(res && res.ok){ var d = await res.json(); return d.sha }
   return null;
 }
 
 async function ghCommitFile(path, content, msg){
-  for(var retry=0; retry<3; retry++){
+  for(var retry=0; retry<5; retry++){
     var sha = await ghGetSha(path);
     var base64 = btoa(unescape(encodeURIComponent(content)));
     var res = await ghApi('/contents/' + path, 'PUT', { message: msg || 'Update ' + path, content: base64, sha: sha || undefined, branch: GH_BRANCH });
     if(res && (res.ok || res.status===422)) return true;
-    if(res && res.status===409){ if(retry<2) await new Promise(function(r){setTimeout(r,800)}) }
+    if(res && res.status===409){ if(retry<4) await new Promise(function(r){setTimeout(r,1000*Math.pow(2,retry))}) }
     else break;
   }
   return false;
