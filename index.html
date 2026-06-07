@@ -1516,13 +1516,10 @@ function tryAuth(pw){
 }
 function promptPW(){var p=prompt('Enter admin password:');if(p===null)return;p=p.trim();if(!p)return;tryAuth(p)}
 
-var _seq='',_st;
 document.addEventListener('keydown', function(ev){
-  if((ev.ctrlKey||ev.metaKey)&&ev.shiftKey&&(ev.key>='0'&&ev.key<='9')){
-    _seq+=ev.key;
-    clearTimeout(_st);
-    _st=setTimeout(function(){_seq=''},1500);
-    if(_seq==='1340'){_seq='';if(!authd)promptPW();else if(!editing)setEdit(true)}
+  if((ev.ctrlKey||ev.metaKey)&&ev.shiftKey&&(ev.key==='E'||ev.key==='e')){
+    ev.preventDefault();
+    if(!authd)promptPW();else if(!editing)setEdit(true)
   }
 });
 
