@@ -97,10 +97,7 @@ section{position:relative;padding:6rem 5%}
 .location-info .label{color:var(--gold);font-weight:500}
 .map-wrap{border-radius:12px;overflow:hidden}
 .map-wrap iframe{width:100%;height:350px;border:0;filter:grayscale(1) invert(0.9)}
-.contact-section{text-align:center;padding:5rem 5%}
-.contact-section h2{font-size:clamp(2rem,4vw,3rem);color:var(--gold);margin-bottom:2rem}
-.contact-btn{display:flex;align-items:center;gap:0.75rem;padding:1rem 2.5rem;border:1px solid var(--copper);border-radius:50px;color:var(--cream);text-decoration:none;font-size:0.95rem;transition:all 0.3s}
-.contact-btn:hover{background:var(--copper);color:var(--cream);transform:translateY(-3px);border-color:var(--gold)}
+
 .menu-fullscreen{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;cursor:zoom-out;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
 .menu-fullscreen.open{display:flex}
 .menu-fullscreen img{max-width:95vw;max-height:95vh;object-fit:contain;border-radius:4px}
@@ -119,7 +116,6 @@ footer .heart{color:var(--gold)}
   .gallery-grid{grid-template-columns:repeat(2,1fr)}
   .gallery-grid img{height:200px}
   .menu-grid{max-width:100%}
-  .contact-links{flex-direction:column;align-items:center}
   section{padding:4rem 5%}
 }
 @media(max-width:480px){
@@ -307,7 +303,7 @@ footer{padding:4rem 5% 2rem;text-align:center;border-top:1px solid rgba(212,165,
 
 /* ===== SECTION BACKGROUNDS ===== */
 #about,#signatures,#location{background:linear-gradient(180deg,rgba(10,10,10,0.95),rgba(21,16,10,0.3),rgba(10,10,10,0.95))}
-#menu,#gallery,.contact-section{background:linear-gradient(180deg,rgba(10,10,10,0.95),rgba(30,10,10,0.3),rgba(10,10,10,0.95))}
+#menu,#gallery{background:linear-gradient(180deg,rgba(10,10,10,0.95),rgba(30,10,10,0.3),rgba(10,10,10,0.95))}
 
 /* ===== PRELOADER ===== */
 #preloader {
@@ -367,8 +363,8 @@ footer{padding:4rem 5% 2rem;text-align:center;border-top:1px solid rgba(212,165,
 
 .save-btn{position:fixed;bottom:24px;right:24px;z-index:99999;background:var(--gold);color:var(--black);border:none;padding:10px 20px;border-radius:10px;font-size:.85rem;font-weight:600;cursor:pointer;font-family:Inter,sans-serif;box-shadow:0 4px 20px rgba(212,165,116,0.3);transition:transform .2s}
 .save-btn:hover{transform:scale(1.05)}
-body.edit-mode h2,body.edit-mode h3,body.edit-mode h4,body.edit-mode p,body.edit-mode li,body.edit-mode .price,body.edit-mode .icon,body.edit-mode .contact-btn,body.edit-mode .footer-tagline,body.edit-mode .review-text,body.edit-mode .review-author,body.edit-mode .review-role,body.edit-mode .footer-links a,body.edit-mode .hero-sub,body.edit-mode .hero-tagline,body.edit-mode .label{outline:1px dashed rgba(212,165,116,.2);cursor:pointer;padding:1px 3px;border-radius:3px;transition:outline-color .2s}
-body.edit-mode h2:hover,body.edit-mode h3:hover,body.edit-mode h4:hover,body.edit-mode p:hover,body.edit-mode li:hover,body.edit-mode .price:hover,body.edit-mode .icon:hover,body.edit-mode .contact-btn:hover,body.edit-mode .footer-tagline:hover,body.edit-mode .review-text:hover,body.edit-mode .review-author:hover,body.edit-mode .review-role:hover,body.edit-mode .footer-links a:hover,body.edit-mode .hero-sub:hover,body.edit-mode .hero-tagline:hover,body.edit-mode .label:hover{outline-color:var(--gold)}
+body.edit-mode h2,body.edit-mode h3,body.edit-mode h4,body.edit-mode p,body.edit-mode li,body.edit-mode .price,body.edit-mode .icon,body.edit-mode .footer-tagline,body.edit-mode .review-text,body.edit-mode .review-author,body.edit-mode .review-role,body.edit-mode .footer-links a,body.edit-mode .hero-sub,body.edit-mode .hero-tagline,body.edit-mode .label{outline:1px dashed rgba(212,165,116,.2);cursor:pointer;padding:1px 3px;border-radius:3px;transition:outline-color .2s}
+body.edit-mode h2:hover,body.edit-mode h3:hover,body.edit-mode h4:hover,body.edit-mode p:hover,body.edit-mode li:hover,body.edit-mode .price:hover,body.edit-mode .icon:hover,body.edit-mode .footer-tagline:hover,body.edit-mode .review-text:hover,body.edit-mode .review-author:hover,body.edit-mode .review-role:hover,body.edit-mode .footer-links a:hover,body.edit-mode .hero-sub:hover,body.edit-mode .hero-tagline:hover,body.edit-mode .label:hover{outline-color:var(--gold)}
 body.edit-mode .gallery-grid img,body.edit-mode .about-image,body.edit-mode .icon{cursor:pointer}
 .icon.has-img{font-size:0;width:60px;height:60px;margin:0 auto 0.8rem;border-radius:8px;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
 .cards-col .icon.has-img{width:48px;height:48px}
@@ -467,7 +463,7 @@ body.edit-mode .tag-add-btn{display:inline-flex;align-items:center;justify-conte
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#location">Location</a></li>
     <li><a href="#coffee">Coffee</a></li>
-    <li><a href="#contact">Contact</a></li>
+
   </ul>
 </nav>
 
@@ -896,19 +892,7 @@ body.edit-mode .tag-add-btn{display:inline-flex;align-items:center;justify-conte
   </svg>
 </div>
 
-<section class="contact-section" id="contact">
-  <h2>Get in Touch</h2>
-  <div class="contact-links">
-    <a class="contact-btn" href="https://web.facebook.com/profile.php?id=61557183885157" target="_blank" rel="noopener">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      Follow @1340
-    </a>
-    <a class="contact-btn" href="tel:01711963469">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      Call Us
-    </a>
-  </div>
-</section>
+
 
 <footer>
   <div class="footer-brand">
@@ -921,7 +905,6 @@ body.edit-mode .tag-add-btn{display:inline-flex;align-items:center;justify-conte
     <a href="#coffee">Coffee</a>
     <a href="#signatures">Signatures</a>
     <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
   </div>
   <div class="footer-social">
     <a href="https://web.facebook.com/profile.php?id=61557183885157" target="_blank" rel="noopener" aria-label="Facebook">
@@ -1077,7 +1060,7 @@ fetchGoogleReviews();
 // DIRECTIONAL SECTION REVEALS
 gsap.utils.toArray('section:not(.hero)').forEach(section => {
   const isEven = [...document.querySelectorAll('section:not(.hero)')].indexOf(section) % 2 === 0;
-  const h2 = section.querySelector('.section-header h2, .about-title, .monin-section h2, .location-info h2, .contact-section h2');
+  const h2 = section.querySelector('.section-header h2, .about-title, .monin-section h2, .location-info h2');
   const items = section.querySelectorAll('.menu-card, .signature-card, .gallery-grid img');
   const st = { trigger: section, start: 'top 85%', toggleActions: 'play none none reverse' };
   if (h2) {
@@ -1126,8 +1109,6 @@ gsap.fromTo('.about-image', { y: 40, opacity: 0 }, { scrollTrigger: { trigger: '
 gsap.from('.location-info', { scrollTrigger: { trigger: '#location', start: 'top 75%' }, x: -60, opacity: 0, duration: 1, ease: 'power4.out' });
 gsap.from('.map-wrap', { scrollTrigger: { trigger: '#location', start: 'top 75%' }, x: 60, opacity: 0, duration: 1, ease: 'power4.out' }, '-=1');
 
-// CONTACT
-gsap.from('.contact-btn', { scrollTrigger: { trigger: '#contact', start: 'top 80%' }, y: 40, opacity: 0, duration: 0.6, stagger: 0.15, ease: 'back.out(1.7)' });
 
 // HERO PARALLAX ON MOUSE
 document.querySelector('.hero')?.addEventListener('mousemove', (e) => {
@@ -1406,7 +1387,7 @@ var PW_HASH = (function(){
 })();
 var editing = false, authd = sessionStorage.getItem('1340-auth') === 'true';
 if (authd) editing = localStorage.getItem('1340-edit-mode') === 'true' || new URLSearchParams(location.search).has('edit');
-var sel = 'h2:not(nav h2), h3, h4, p, li, .price, .contact-btn, .footer-tagline, ' +
+var sel = 'h2:not(nav h2), h3, h4, p, li, .price, .footer-tagline, ' +
   '.review-text, .review-author, .review-role, .hero-sub, .hero-tagline, .label, ' +
   '.footer-links a, .about-title, .highlight, .coffee-tags span, .gh-sub';
 
