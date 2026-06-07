@@ -1965,10 +1965,19 @@ async function ghFetchState(){
   var p=old
     ?(function(){try{var parsed=JSON.parse(old);localStorage.removeItem('1340-data');return dbSave(parsed).then(function(){return parsed})}catch(ex){return Promise.resolve(null)}})()
     :dbLoad();
+  function _doCleanup(key){
+    return openImgDB().then(function(db){
+      return new Promise(function(resolve){
+        var tx=db.transaction('store','readwrite');
+        tx.objectStore('store').delete('state');
+        tx.oncomplete=function(){localStorage.setItem(key,'1');resolve()};
+      });
+    });
+  }
   p.then(function(d){
     if(d)restoreImgs(d);
-    if(!localStorage.getItem('1340-state-fixed')){return openImgDB().then(function(db){return new Promise(function(resolve){var tx=db.transaction('store','readwrite');tx.objectStore('store').delete('state');tx.oncomplete=function(){localStorage.setItem('1340-state-fixed','1');resolve()}}))}}
-    if(!localStorage.getItem('1340-state-v2')){return openImgDB().then(function(db){return new Promise(function(resolve){var tx=db.transaction('store','readwrite');tx.objectStore('store').delete('state');tx.oncomplete=function(){localStorage.setItem('1340-state-v2','1');resolve()}}))}}
+    if(!localStorage.getItem('1340-state-fixed')) return _doCleanup('1340-state-fixed');
+    if(!localStorage.getItem('1340-state-v2')) return _doCleanup('1340-state-v2');
   }).then(function(){return _ghP}).then(function(){if(!_gh)return dbLoadState()}).then(function(state){if(state&&!_gh){restoreSectionState(state);if(editing)setEdit(true)}}).catch(function(){});
 })();
 if (editing) setEdit(true);
