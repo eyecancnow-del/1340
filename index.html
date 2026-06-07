@@ -1384,7 +1384,7 @@ var PW_HASH = (function(){
   return '0'+p.join('');
 })();
 var editing = false, authd = sessionStorage.getItem('1340-auth') === 'true';
-if (authd) editing = localStorage.getItem('1340-edit-mode') === 'true' || new URLSearchParams(location.search).has('edit');
+if (authd) editing = new URLSearchParams(location.search).has('edit');
 var sel = 'h2:not(nav h2), h3, h4, p, li, .price, .footer-tagline, ' +
   '.review-text, .review-author, .review-role, .hero-sub, .hero-tagline, .label, ' +
   '.footer-links a, .about-title, .highlight, .coffee-tags span, .gh-sub';
