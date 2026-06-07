@@ -1844,11 +1844,11 @@ function restoreSectionState(state){
 
 
 // === GITHUB SYNC — Saves edits for all visitors ===
-var GH_OWNER = 'eyecancnow-del', GH_REPO = '1340', GH_BRANCH = 'master', GH_TOKEN = sessionStorage.getItem('1340-gh-token');
+var GH_OWNER = 'eyecancnow-del', GH_REPO = '1340', GH_BRANCH = 'master', GH_TOKEN = localStorage.getItem('1340-gh-token');
 
 function promptGhToken(){
   var t = prompt('Enter your GitHub token:\n(Required to save changes so everyone sees them)');
-  if(t && t.trim()){ GH_TOKEN = t.trim(); sessionStorage.setItem('1340-gh-token', GH_TOKEN); return true }
+  if(t && t.trim()){     GH_TOKEN = t.trim(); localStorage.setItem('1340-gh-token', GH_TOKEN); return true }
   return false;
 }
 
@@ -1858,7 +1858,7 @@ async function ghApi(path, method, body){
     var opts = { headers: { 'Authorization': 'token ' + GH_TOKEN, 'Accept': 'application/vnd.github.v3+json' }, method: method || 'GET' };
     if(body){ opts.body = JSON.stringify(body); opts.headers['Content-Type'] = 'application/json' }
     var res = await fetch('https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + path, opts);
-    if(res.status === 401){ GH_TOKEN = null; sessionStorage.removeItem('1340-gh-token'); alert('Token expired. Enter a new one.'); return null }
+    if(res.status === 401){ GH_TOKEN = null; localStorage.removeItem('1340-gh-token'); alert('Token expired. Enter a new one.'); return null }
     return res;
   } catch(e){ return null }
 }
