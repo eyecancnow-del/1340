@@ -1424,9 +1424,9 @@ function setEdit(on){
   if (on){
     var sb=document.createElement('button');
     sb.className='save-btn';sb.textContent='\u2B07 Save';
-    sb.onclick=function(){
+    sb.onclick=async function(){
       document.querySelectorAll('[contenteditable]').forEach(function(el){el.removeAttribute('contenteditable')});
-      saveSectionState();setEdit(false);
+      saveSectionState(); await ghPushState(); setEdit(false);
     };
     document.body.appendChild(sb);
     if(typeof closeMag==='function'){
@@ -1542,7 +1542,7 @@ document.addEventListener('click', function(ev){
       inp.onchange=function(ev2){
         var f=ev2.target.files[0];if(!f)return;
         var r=new FileReader();
-      r.onload=function(re){img.src=re.target.result;saveImgs();saveSectionState()};
+      r.onload=function(re){img.src=re.target.result;saveImgs();saveSectionState();ghUploadImg(re.target.result,function(ghUrl){if(ghUrl){img.src=ghUrl;saveImgs()}})};
       r.readAsDataURL(f);
       };
       inp.click();
@@ -1637,6 +1637,16 @@ document.addEventListener('click', function(ev){
             if (back && back !== front){ back.style.backgroundImage = url; back.classList.add('has-img') }
           }
           saveImgs();
+          ghUploadImg(compressed, function(ghUrl){
+            if(!ghUrl) return;
+            var u = 'url("' + ghUrl + '")';
+            t.style.backgroundImage = u;
+            if(card){
+              var f2 = card.querySelector('.coffee-front .icon'); if(f2) f2.style.backgroundImage = u;
+              var b2 = card.querySelector('.coffee-back .icon'); if(b2 && b2 !== f2) b2.style.backgroundImage = u;
+            }
+            saveImgs();
+          });
         });
       };
       r.readAsDataURL(f);
@@ -1654,7 +1664,10 @@ document.addEventListener('click', function(ev){
       var f = ev2.target.files[0];
       if (!f) return;
       var r = new FileReader();
-      r.onload = function(re){ im.src = re.target.result; saveImgs() };
+      r.onload = function(re){
+        im.src = re.target.result; saveImgs();
+        ghUploadImg(re.target.result, function(ghUrl){ if(ghUrl){ im.src = ghUrl; saveImgs() } });
+      };
       r.readAsDataURL(f);
     };
     inp.click();
@@ -1830,6 +1843,78 @@ function restoreSectionState(state){
 }
 
 
+// === GITHUB SYNC — Saves edits for all visitors ===
+var GH_OWNER = 'eyecancnow-del', GH_REPO = '1340', GH_BRANCH = 'master', GH_TOKEN = sessionStorage.getItem('1340-gh-token');
+
+function promptGhToken(){
+  var t = prompt('Enter your GitHub token:\n(Required to save changes so everyone sees them)');
+  if(t && t.trim()){ GH_TOKEN = t.trim(); sessionStorage.setItem('1340-gh-token', GH_TOKEN); return true }
+  return false;
+}
+
+async function ghApi(path, method, body){
+  if(!GH_TOKEN && !promptGhToken()) return null;
+  try {
+    var opts = { headers: { 'Authorization': 'token ' + GH_TOKEN, 'Accept': 'application/vnd.github.v3+json' }, method: method || 'GET' };
+    if(body){ opts.body = JSON.stringify(body); opts.headers['Content-Type'] = 'application/json' }
+    var res = await fetch('https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + path, opts);
+    if(res.status === 401){ GH_TOKEN = null; sessionStorage.removeItem('1340-gh-token'); alert('Token expired. Enter a new one.'); return null }
+    return res;
+  } catch(e){ return null }
+}
+
+async function ghGetSha(path){
+  var res = await ghApi('/contents/' + path + '?ref=' + GH_BRANCH);
+  if(res && res.ok){ var d = await res.json(); return d.sha }
+  return null;
+}
+
+async function ghCommitFile(path, content, msg){
+  var sha = await ghGetSha(path);
+  var base64 = btoa(unescape(encodeURIComponent(content)));
+  var res = await ghApi('/contents/' + path, 'PUT', { message: msg || 'Update ' + path, content: base64, sha: sha || undefined, branch: GH_BRANCH });
+  return res && (res.ok || res.status === 422);
+}
+
+async function ghUploadImg(compressed, callback){
+  if(!GH_TOKEN && !promptGhToken()){ if(callback) callback(null); return }
+  var m = compressed.match(/^data:([^;]+);/), ext = '.jpg';
+  if(m){ var t = m[1]; if(t==='image/png') ext='.png'; else if(t==='image/gif') ext='.gif'; else if(t==='image/webp') ext='.webp' }
+  var b64 = compressed.split(',')[1], fn = Date.now()+'-'+Math.random().toString(36).slice(2,6)+ext, path = 'data/i/'+fn;
+  var sha = await ghGetSha(path);
+  var res = await ghApi('/contents/'+path, 'PUT', { message: 'Upload '+fn, content: b64, sha: sha||undefined, branch: GH_BRANCH });
+  if(res && res.ok){ var d=await res.json(); if(callback) callback(d.content.download_url) }
+  else if(callback) callback(null);
+}
+
+async function ghPushState(){
+  var state = {};
+  STATE_KEYS.forEach(function(id){
+    var sec = document.getElementById(id); if(!sec) return;
+    var c = sec.cloneNode(true);
+    c.querySelectorAll('.admin-del-btn,.admin-add-btn,.tag-del-btn,.tag-add-btn').forEach(function(e){ e.parentNode.removeChild(e) });
+    c.querySelectorAll('[contenteditable]').forEach(function(e){ e.removeAttribute('contenteditable') });
+    c.querySelectorAll('[style*="opacity"],[style*="transform"]').forEach(function(e){ e.style.opacity=''; e.style.transform='' });
+    c.querySelectorAll('script,iframe,object,embed,applet').forEach(function(e){ e.parentNode.removeChild(e) });
+    c.querySelectorAll('*').forEach(function(e){ for(var i=e.attributes.length-1;i>=0;i--){ if(e.attributes[i].name.indexOf('on')===0) e.removeAttribute(e.attributes[i].name) } });
+    state[id] = c.innerHTML;
+  });
+  state._hours = OPERATING_HOURS;
+  var ok = await ghCommitFile('data/state.json', JSON.stringify(state), 'Update site content via editor');
+  if(ok) console.log('Published to GitHub!');
+  else alert('Failed to publish. Check your GitHub token.');
+  return ok;
+}
+
+async function ghFetchState(){
+  try {
+    var res = await fetch('https://raw.githubusercontent.com/'+GH_OWNER+'/'+GH_REPO+'/'+GH_BRANCH+'/data/state.json?t='+Date.now());
+    if(res.ok) return await res.json();
+  } catch(e){}
+  return null;
+}
+// === END GITHUB SYNC ===
+
 // Migrate old localStorage data to IndexedDB, then restore images
 (function(){
   var old = localStorage.getItem('1340-data');
@@ -1865,6 +1950,14 @@ function restoreSectionState(state){
       });
     }
   }).then(function(){
+    return ghFetchState();
+  }).then(function(ghState){
+    if(ghState){
+      if(ghState._hours){ OPERATING_HOURS = ghState._hours; saveHoursConfig(); if(window.updateGoldenHourClock) updateGoldenHourClock() }
+      restoreSectionState(ghState);
+      if(editing) setEdit(true);
+      return;
+    }
     return dbLoadState();
   }).then(function(state){
     if(state){ restoreSectionState(state); if(editing) setEdit(true); }
