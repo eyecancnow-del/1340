@@ -49,9 +49,9 @@ nav .links a:active{transform:scale(0.96);}
 .hero-content{position:relative;z-index:2}
 .hero-title{font-size:clamp(4rem,15vw,12rem);color:var(--gold);line-height:0.85;margin-bottom:0.5rem;text-shadow:0 0 80px rgba(212,165,116,0.3),0 2px 4px rgba(0,0,0,0.8);display:flex;gap:clamp(0.2rem,1vw,1rem);justify-content:center}
 .hero-title .letter{display:inline-block;opacity:0}
-.hero-sub{font-size:clamp(0.9rem,1.8vw,1.4rem);font-weight:300;letter-spacing:6px;text-transform:uppercase;margin-bottom:0.75rem;opacity:0;position:relative;color:rgba(20,12,8,0.85);text-shadow:0 2px 15px rgba(0,0,0,0.85),0 0 30px rgba(0,0,0,0.5)}
+.hero-sub{font-size:clamp(1rem,2vw,1.6rem);font-weight:500;letter-spacing:6px;text-transform:uppercase;margin-bottom:0.75rem;opacity:0;position:relative;color:rgba(20,12,8,0.85);text-shadow:0 2px 15px rgba(0,0,0,0.85),0 0 30px rgba(0,0,0,0.5)}
 .hero-sub::after{content:'';display:block;width:clamp(40px,8vw,100px);height:1.5px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0.85rem auto 0;border-radius:2px}
-.hero-tagline{font-size:clamp(0.7rem,1.2vw,1rem);font-weight:300;letter-spacing:4px;opacity:0;color:rgba(20,12,8,0.7);text-shadow:0 2px 12px rgba(0,0,0,0.85),0 0 25px rgba(0,0,0,0.5)}
+.hero-tagline{font-size:clamp(0.8rem,1.4vw,1.1rem);font-weight:500;letter-spacing:4px;opacity:0;color:rgba(20,12,8,0.7);text-shadow:0 2px 12px rgba(0,0,0,0.85),0 0 25px rgba(0,0,0,0.5)}
 
 .scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0}
 .scroll-indicator span{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
@@ -69,7 +69,7 @@ section{position:relative;padding:6rem 5%}
 .about-text h2{font-family:'Zen Old Mincho',serif;font-size:clamp(2rem,calc(3vw + 3vh),5rem);color:var(--gold);margin-bottom:clamp(0.5rem,calc(0.5vw + 0.5vh),1.5rem)}
 .about-text p{font-size:clamp(1rem,calc(1vw + 0.8vh),1.35rem);line-height:clamp(1.6,calc(1.2 + 0.3vw + 0.3vh),2);color:var(--muted);margin-bottom:clamp(0.4rem,calc(0.3vw + 0.3vh),1rem);text-align:center}
 .about-text .jp-char{display:inline-block;min-width:0.6em;text-align:center}
-.about-text .glow-word{transition:text-shadow 0.6s ease,color 0.6s ease;text-shadow:0 0 0 transparent}
+.about-text .glow-word{display:inline-block;transition:text-shadow 0.6s ease,color 0.6s ease,transform 0.4s ease;text-shadow:0 0 0 transparent;transform:scale(1)}
 .about-text .highlight{color:var(--gold);font-style:italic;font-family:'Zen Old Mincho',serif}
 .about-image{width:100%;height:clamp(120px,calc(10vw + 10vh),250px);object-fit:cover;border-radius:8px}
 .menu-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;max-width:420px;margin:0 auto}
@@ -1085,9 +1085,13 @@ gsap.utils.toArray('section:not(.hero)').forEach(section => {
     var w = words[Math.floor(Math.random() * words.length)];
     w.style.textShadow = '0 0 25px #D4A574, 0 0 60px rgba(212,165,116,0.8), 0 0 100px rgba(212,165,116,0.5)';
     w.style.color = '#F5E6C8';
+    w.style.transform = 'scale(1.08)';
+    w.style.fontWeight = '600';
     setTimeout(function(){
       w.style.textShadow = '0 0 0 transparent';
       w.style.color = '';
+      w.style.transform = 'scale(1)';
+      w.style.fontWeight = '';
       setTimeout(glow, 800 + Math.random() * 1200);
     }, 800 + Math.random() * 400);
   }
