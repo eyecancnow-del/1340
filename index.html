@@ -1415,6 +1415,7 @@ function setupNewCard(card){
 }
 
 function setEdit(on){
+  if(on && editing) return;
   editing = on;
   localStorage.setItem('1340-edit-mode', on);
   document.body.classList.toggle('edit-mode', on);
@@ -1875,14 +1876,15 @@ async function ghGetSha(path){
 }
 
 async function ghCommitFile(path, content, msg){
-  for(var retry=0; retry<5; retry++){
+  for(var retry=0; retry<3; retry++){
     var sha = await ghGetSha(path);
     var base64 = btoa(unescape(encodeURIComponent(content)));
     var res = await ghApi('/contents/' + path, 'PUT', { message: msg || 'Update ' + path, content: base64, sha: sha || undefined, branch: GH_BRANCH });
     if(res && res.ok) return true;
-    if(res && res.status===409){ if(retry<4) await new Promise(function(r){setTimeout(r,1000*Math.pow(2,retry))}) }
+    if(res && res.status===409 && retry<2){ await new Promise(function(r){setTimeout(r,800)}) }
     else { if(res) console.error('GitHub PUT failed:', res.status); break }
   }
+  alert('GitHub save failed\u2014your edits are saved locally. Try again in a moment.');
   return false;
 }
 
@@ -1912,7 +1914,6 @@ async function ghPushState(){
   state._hours = OPERATING_HOURS;
   var ok = await ghCommitFile('data/state.json', JSON.stringify(state), 'Update site content via editor');
   if(ok) console.log('Published to GitHub!');
-  else alert('Failed to publish. Check your token has "Contents: Read and write" permission for the repo.');
   return ok;
 }
 
