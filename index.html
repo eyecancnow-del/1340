@@ -69,7 +69,7 @@ section{position:relative;padding:6rem 5%}
 .about-text h2{font-family:'Zen Old Mincho',serif;font-size:clamp(2rem,calc(3vw + 3vh),5rem);color:var(--gold);margin-bottom:clamp(0.5rem,calc(0.5vw + 0.5vh),1.5rem)}
 .about-text p{font-size:clamp(1rem,calc(1vw + 0.8vh),1.35rem);line-height:clamp(1.6,calc(1.2 + 0.3vw + 0.3vh),2);color:var(--muted);margin-bottom:clamp(0.4rem,calc(0.3vw + 0.3vh),1rem);text-align:center}
 .about-text .jp-char{display:inline-block;min-width:0.6em;text-align:center}
-.about-text .glow-word{display:inline-block;transition:text-shadow 0.6s ease,color 0.6s ease,transform 0.4s ease;text-shadow:0 0 0 transparent;transform:scale(1)}
+.about-text .glow-word{transition:text-shadow 0.6s ease,color 0.6s ease,transform 0.4s ease;text-shadow:0 0 0 transparent;transform:scale(1)}
 .about-text .highlight{color:var(--gold);font-style:italic;font-family:'Zen Old Mincho',serif}
 .about-image{width:100%;height:clamp(120px,calc(10vw + 10vh),250px);object-fit:cover;border-radius:8px}
 .menu-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;max-width:420px;margin:0 auto}
@@ -1074,10 +1074,13 @@ gsap.utils.toArray('section:not(.hero)').forEach(section => {
     el.textContent = '';
     parts.forEach(function(p){
       var sp = document.createElement('span');
-      sp.className = 'glow-word';
       sp.textContent = p;
+      if(p.trim()){
+        sp.className = 'glow-word';
+        sp.style.display = 'inline-block';
+        words.push(sp);
+      }
       el.appendChild(sp);
-      if (p.trim()) words.push(sp);
     });
   });
 
