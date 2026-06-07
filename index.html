@@ -1099,7 +1099,7 @@ gsap.utils.toArray('section:not(.hero)').forEach(section => {
   setTimeout(glow, 500);
 })();
 
-gsap.fromTo('.about-image', { y: 40, opacity: 0 }, { scrollTrigger: { trigger: '#about', start: 'top 75%' }, y: 0, opacity: 1, duration: 2, ease: 'power2.out' });
+
 
 // LOCATION WITH SPLIT DIRECTION
 gsap.from('.location-info', { scrollTrigger: { trigger: '#location', start: 'top 75%' }, x: -60, opacity: 0, duration: 1, ease: 'power4.out' });
@@ -1421,6 +1421,7 @@ function setEdit(on){
     var sb=document.createElement('button');
     sb.className='save-btn';sb.textContent='\u2B07 Save';
     sb.onclick=async function(){
+      sb.disabled=true; sb.textContent='Saving...';
       document.querySelectorAll('[contenteditable]').forEach(function(el){el.removeAttribute('contenteditable')});
       saveSectionState(); await ghPushState(); setEdit(false);
     };
@@ -1855,7 +1856,7 @@ async function ghApi(path, method, body, quiet){
     if(body){ opts.body = JSON.stringify(body); opts.headers['Content-Type'] = 'application/json' }
     var res = await fetch('https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + path, opts);
     if(res.status === 401){ GH_TOKEN = null; localStorage.removeItem('1340-gh-token'); alert('Token expired or invalid. Enter a new one.'); return null }
-    if(!res.ok && !quiet){ var _e = await res.text(); console.error('GitHub API error', res.status, _e) }
+    if(!res.ok && !quiet && res.status!==409){ var _e = await res.text(); console.error('GitHub API error', res.status, _e) }
     return res;
   } catch(e){ return null }
 }
@@ -1872,8 +1873,8 @@ async function ghCommitFile(path, content, msg){
     var base64 = btoa(unescape(encodeURIComponent(content)));
     var res = await ghApi('/contents/' + path, 'PUT', { message: msg || 'Update ' + path, content: base64, sha: sha || undefined, branch: GH_BRANCH });
     if(res && (res.ok || res.status===422)) return true;
-    if(res && res.status===409){ continue }
-    break;
+    if(res && res.status===409){ if(retry<2) await new Promise(function(r){setTimeout(r,800)}) }
+    else break;
   }
   return false;
 }
