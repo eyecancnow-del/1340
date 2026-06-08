@@ -1,5 +1,25 @@
 # 1340 Cafe & Cocktail Bar — Complete Project Documentation
 
+## Session History
+
+### Jun 8, 2026 — SyntaxError Fix
+- **Bug**: IIFE at `index.html:1970-1972` had extra `)` and `}` in compressed `openImgDB().then(...)` chain — `}}))}}` instead of `}})} }`
+- **Root cause**: Hand-minified two separate cleanup blocks into one-liners, lost brace/paren balance
+- **Symptoms**: ALL JS in IIFE crashed silently — `restoreSectionState`, `ghFetchState`, `setEdit` never ran; page loaded default HTML (clean slate); admin panel would not enter/exit edit mode
+- **Fix**: Decompressed into named `_doCleanup(key)` function with clean Promise chain
+- **Verification**: `data/state.json` remote intact (9 keys); SyntaxError confirmed fixed via Node.js `new Function()` test
+- **Character search**: `➳` (U+27B3) — confirmed zero occurrences in entire codebase
+
+### Previous Sessions (Summary)
+- Key combo changed from typed sequence `Ctrl+Shift+1→3→4→0` to single `Ctrl/Cmd+Shift+E`
+- GitHub sync system added: `ghPushState()`, `ghFetchState()`, `ghUploadImg()` via Content API
+- Gold shimmer text removed → solid white + text-shadow hero text
+- Full-page background: WebP (237KB) with PNG fallback
+- iOS flip-card fix: `-webkit-backface-visibility:hidden`
+- Page load flash fix: synchronous localStorage cache + parallel GitHub fetch
+- Hero fields saved as separate state keys to preserve GSAP references
+- `.flip-back` text removed from all cards and saved state
+
 ## Overview
 - **Site**: Single-page static HTML/CSS/JS site for 1340 Cafe & Cocktail Bar in Savar, Dhaka
 - **File**: `C:\Users\VIBER\Desktop\ALL FUTURE PROJECTS\1340 Simple\index.html` (~2089 lines)
@@ -288,6 +308,8 @@ Options:
 C:\Users\VIBER\Desktop\ALL FUTURE PROJECTS\1340 Simple\
 ├── index.html              ← THE SITE (all code)
 ├── images\
+│   ├── bg.webp             ← Full-page background (WebP, 237KB)
+│   ├── bg.png              ← Fallback background (PNG, 2.5MB)
 │   ├── sun.jpg / sun.png   ← Golden hour sun graphic
 │   └── moon.jpg / moon.png ← Golden hour moon graphic
 ├── backup\                 ← Old backups (reference only)
@@ -295,5 +317,6 @@ C:\Users\VIBER\Desktop\ALL FUTURE PROJECTS\1340 Simple\
 │   ├── state.json          ← Admin panel edits
 │   └── i\                  ← Uploaded images
 ├── .gitignore
+├── AGENTS.md               ← Agent session state (loaded by OpenCode on start)
 └── SESSION-NOTES.md        ← This file
 ```
